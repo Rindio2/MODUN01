@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chèn dấu hyphen giữa số chẵn</title>
+    
+</head>
+<body>
+    <h2>Nhập số:</h2>
+    <input type="text" id="inputNumber" placeholder="Nhập số">
+    <br> <br>
+    <button onclick="chenHyphenSoChan()">Chèn dấu hyphen</button><br>
+    <p id="result"></p>
+
+    <script>
+      // JavaScript để chèn dấu hyphen giữa số chẵn
+      function chenHyphenSoChan() {
+      let number = document.getElementById("inputNumber").value;
+      let numStr = number.toString();
+      let result = '';
+      
+      for (let i = 0; i < numStr.length - 1; i++) {
+        // Kiểm tra nếu cả hai số đều là số chẵn
+        if (parseInt(numStr[i]) % 2 === 0 && parseInt(numStr[i + 1]) % 2 === 0) {
+          result += numStr[i] + '-'; // Chèn dấu '-' nếu cả hai số là số chẵn
+        } else {
+          result += numStr[i]; // Nếu không, chỉ thêm số vào chuỗi kết quả
+        }
+      }
+      result += numStr.slice(-1); // Thêm số cuối cùng vào chuỗi kết quả
+      
+
+      document.getElementById("result").innerText = "Kết quả sau khi chèn dấu hyphen là: " + result;
+    }
+  </script>
+</body>
+</html>
+ 

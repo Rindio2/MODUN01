@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Viết chương trình cho phép người dùng nhập vào cân nặng(kg) và chiều cao(m);
+        Sau đó hiển thị kết quả phân loại theo chỉ số BMI dưới đây.
+        bmi = weight / ( height ^ 2 );
+    -->
+
+    <h2>Nhập vào cân nặng:</h2>
+    <input type="text" id="weight" placeholder="Nhập vào 1 số bất kì">
+    <h2>Nhập vào chiều cao:</h2>
+    <input type="text" id="height" placeholder="Nhập vào 1 số bất kì">
+    <br>
+    <br>
+    <button onclick="kiemTraBMI()">Kiểm tra</button>
+    <button type="button" onclick="resetInput()">Reset</button>
+    <p id="ketqua"></p>
+
+
+    <script>
+
+        function kiemTraBMI(){
+
+            let weight = document.getElementById("weight").value;
+            let height = document.getElementById("height").value;
+            let BMI;
+            
+            weight = parseFloat(weight);
+            height = parseFloat(height);
+
+            BMI = parseFloat(weight /(height*height));
+
+            console.log(BMI)
+
+            if(!isNaN(weight) && !isNaN(height)){
+                
+                if( BMI < 18.5 ){
+                    
+                    document.getElementById("ketqua").innerHTML = " cân nặng thấp (Gầy) ";
+                }
+                else if(BMI >= 18.5 && BMI <= 24.9){
+                    document.getElementById("ketqua").innerHTML = " Bình thường ";
+                }
+                else if(BMI >= 25 && BMI <= 29.9){
+                    document.getElementById("ketqua").innerHTML = " Tiền béo phì ";
+                }
+                else if(BMI >= 30 && BMI <= 34.9){
+                    document.getElementById("ketqua").innerHTML = " Béo phì độ I ";
+                }
+                else if(BMI >= 35 && BMI <= 39.9){
+                    document.getElementById("ketqua").innerHTML = " Béo phì độ II ";
+                }
+                else{
+                    document.getElementById("ketqua").innerHTML = " Béo phì độ III ";
+                }
+                
+
+            }
+            else{
+                document.getElementById("ketqua").innerHTML = "Vui lòng nhập đúng cân nặng vào chiều cao";
+            }
+            
+
+
+        }
+        function resetInput() {
+            document.getElementById("weight").value = ""; // Xóa nội dung trong ô input
+            document.getElementById("height").value = "";
+            document.getElementById("ketqua").innerHTML = ""; // Xóa kết quả hiển thị
+        }
+        document.addEventListener("keypress", function(event) {
+            if (event.key === 'Enter') {
+                kiemTraBMI();
+            }
+        });
+
+
+    </script>
+
+
+
+</body>
+</html>

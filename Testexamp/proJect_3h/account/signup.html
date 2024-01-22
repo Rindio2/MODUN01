@@ -1,0 +1,132 @@
+<!-- Sign Up Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f2f2f2; /* Optional: Set a background color */
+        }
+
+        .signup_content {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc; /* Add a border with a light gray color */
+            border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+            background-color: white; /* Optional: Set a background color for the content */
+        }
+
+        .signup_content h1 {
+            margin-bottom: 20px;
+        }
+
+        .signup_content label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .signup_content input {
+            margin-bottom: 10px;
+            padding: 8px; /* Add padding to the input fields */
+        }
+
+        .signup_content button {
+            margin-top: 10px;
+            padding: 10px 20px; /* Adjust padding for the button */
+            background-color: #4caf50; /* Set a background color for the button */
+            color: white; /* Set text color for the button */
+            border: none; /* Remove default button border */
+            border-radius: 5px; /* Add border-radius for rounded button corners */
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="signup_content">
+        <h1>Sign Up</h1>
+        <label for="user">Username</label>
+        <input type="text" placeholder="Tài khoản" id="user">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Mật khẩu" id="password">
+
+        <label for="password_check">Confirm Password</label>
+        <input type="password" placeholder="Nhập lại mật khẩu" id="password_check">
+
+        <label for="email">Email</label>
+        <input type="text" placeholder="Email người dùng" id="email"> <br>
+
+        <button onclick="sign_up()">Đăng kí</button>
+        <a href="./login.html">đã có tài khoản</a>
+    </div>
+    <script>
+        function sign_up() {
+            // Lấy giá trị từ các trường input
+            let username = document.getElementById('user').value;
+            let password = document.getElementById('password').value;
+            let passwordCheck = document.getElementById('password_check').value;
+            let email = document.getElementById('email').value;
+
+            // Kiểm tra xem mật khẩu và nhập lại mật khẩu có trùng khớp không
+            if (password !== passwordCheck) {
+                alert("Mật khẩu không trùng khớp. Vui lòng nhập lại.");
+                return;
+            }
+
+            // Kiểm tra xem email đã tồn tại trong local storage chưa
+            let registeredUsers = localStorage.getItem('registeredUsers');
+            if (!registeredUsers) {
+                registeredUsers = [];
+            } else {
+                registeredUsers = JSON.parse(registeredUsers);
+            }
+
+            // Kiểm tra xem email đã được sử dụng chưa
+            for (let user of registeredUsers) {
+                if (user.email === email) {
+                    alert("Email đã được sử dụng. Vui lòng sử dụng email khác.");
+                    return;
+                }
+            }
+
+            // Kiểm tra xem user đã tồn tại chưa
+            for (let user of registeredUsers) {
+                if (user.username === username) {
+                    alert("User đã được sử dụng. Vui lòng sử dụng User khác.");
+                    return;
+                }
+            }
+
+            // Tạo một đối tượng chứa thông tin đăng ký
+            let userObject = {
+                username: username,
+                password: password,
+                email: email
+            };
+
+            // Thêm người dùng mới vào mảng
+            registeredUsers.push(userObject);
+
+            // Lưu mảng vào local storage
+            localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+
+            // Hiển thị thông báo đăng ký thành công
+            alert("Đăng ký thành công!");
+            window.location.href = "./login.html";
+        }
+    </script>
+</body>
+</html>

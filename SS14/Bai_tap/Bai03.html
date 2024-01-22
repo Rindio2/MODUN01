@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function drawHeart(size) {
+            let heart = '';
+            const midPoint = Math.floor(size / 2);
+            
+            for (let row = 0; row < size; row++) {
+                for (let col = 0; col < size; col++) {
+                    if (
+                        (row === 0 && col % midPoint !== 0) ||
+                        (row === 1 && col % midPoint === 0) ||
+                        (row - col === midPoint) ||
+                        (row + col === midPoint * 3)
+                    ) {
+                        heart += '*';
+                    } else {
+                        heart += ' ';
+                    }
+                }
+                heart += '\n';
+            }
+
+            console.log(heart);
+        }
+        drawHeart(5);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    margin-left: 25%;
+    display: flex;
+    background-image: url(../img/beach3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 300px;
+
+}
+.header_content{
+    
+    height: 50px;
+    width: 400px;
+    background-color: rgba(251, 184, 0,0.5);
+    margin-top: 30%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+.Bodytravel{
+    
+    
+}
+img{
+    height: 250px;
+    width: 290px;
+}
+.Bodytravel_div{
+    /* position: absolute; */
+    display: inline-block;
+    
+    margin: 20px;
+    justify-content: center;
+}

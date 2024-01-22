@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Viết chương trình cho người dùng nhập vào 3 số, viết hàm kiểm tra để tìm ra số bé nhất và in ra số đó
+
+    -->
+
+    <h2>nhập vào 3 số</h2>
+    <input type="text" id="inputArray">
+    <button onclick="timSoBeNhat()">tìm số bé nhất</button>
+    <p id="result"></p>
+
+    <script>
+        
+        let timSoBeNhat = () => {
+
+            let input = document.getElementById("inputArray").value;
+            let arr = input.split(/\s+/).map(Number);
+            let min = arr[0];
+
+            for(let i= 1; i< arr.length ; i++){
+                if(arr[i] < min){
+                    min = arr[i];
+                }
+            }
+            
+            document.getElementById("result").innerText = "số bé nhất trong mảng là " + min;
+        }
+        
+        
+    </script>
+</body>
+</html>

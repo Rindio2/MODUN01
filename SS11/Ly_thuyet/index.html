@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Array : mảng dùng để lưu trữ dữ liệu giá trị
+        - giá trị ở đây có thể là mọi kiểu dữ liệu
+        - các phần tử trong mảng ngăn cách với nhau bằng dấu phẩy 
+        - các cách khai báo:
+            + cách 1: let prod =["ip5","ip6"];
+            + cách 2: let numbers = new array(1,2,5); tham khảo
+        - đặc tên mảng 
+            + đặt tên có ý nghĩa 
+            + giống quy tắt đặt tên biến
+        - .length là số phần tử trong mảng 
+        - các phần tử trong mảng được đánh index từ 0
+        - lấy phần tử trong mảng theo index
+
+        CRUD- với mảng
+        C: create
+        - push() : thêm phầm tử vào vị trí cuối cùng của mảng
+        - unshifr(): thêm phần tử vào phần đầu tiên của mảng
+        - splice(): có thể thêm, sửa, xóa, phần tử theo mục đích
+            + có 3 tham số:
+                1. tham số
+                2. số phần tử muốn xóa
+                3. phần tử thêm vào
+        R: read
+        - hiển thị ra
+        - dùng vòng lập for, for-in, for-off
+            + for-in trả về index
+            + for-of trả về giá trị
+        U: update
+        - dùng update theo vị trí
+            + array[index] = "giá trị mới"
+        - dùng splice()
+        D: delete
+        - xóa :
+            + pop() xóa pht cuối
+            + shift() xóa pht đầu
+            + splice() xóa theo vị trí mình muốn
+
+
+    -->
+    <script>
+
+        // let stud = ["hoa","1",null,[]]
+        // console.log("", stud.length); // hiển thị số phần tử mảng
+        // console.log("", stud);
+
+        // let array1=["vân anh"];
+        // let array2= array1;
+        // array1[0]="hồng vân";
+        // console.log(array2);
+
+        // stud.push("thuy"); //thêm phầm tử vào vị trí cuối cùng của mảng
+        // stud.unshift("tui"); //thêm phần tử vào phần đầu tiên của mảng
+        // stud.splice(2,0,"tien")
+
+        // let jobs=["da bong", "cầu lông", "bóng bàn"];
+        /* for(let i=0; i<jobs.length; i++)
+        {
+            document.write(jobs[i]);
+            document.write("<br>");
+        } */
+        /* for (let acb in jobs) {
+            console.log("abc", jobs[acb]) // hiển thị thông tin
+            console.log("abc", acb) // hiển thị giá trị
+        } */
+
+        /* for (let acb of jobs) {
+            
+            console.log("abc", acb) // gọn hơn so với for-in
+        } */
+        
+        // jobs[1] = "đá bia";
+        // jobs.splice(1,1,"đá dô cuống họng");
+        
+        // console.log("hic", jobs);
+        let x= [5,6,7,8];
+        for(let a in x){
+            if(x[a]%2==0){
+                break;
+            }
+            console.log(a);
+        }
+        
+        
+
+
+    </script>
+
+</body>
+</html>

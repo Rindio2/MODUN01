@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="./home.css">
+    <script src="https://kit.fontawesome.com/72df7e5c59.js" crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            border: 10px solid yellow;
+        }
+        .reSet{
+            
+            background-color: white;
+            margin: 10px;
+            text-align: center;
+            border-radius: 5px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header_band">
+            RIKKEI_ACADEMY_SHOP
+        </div>
+
+        <div class="header_search">
+            <input id="searchInput" class="header_input" type="text" >
+            <i class="fa-solid fa-magnifying-glass" id="searchIcon" style="color: white; width: 40px; height: 40px; cursor: pointer;"></i>
+            
+        </div>
+
+        <div>
+            <nav>
+                <ul class="custom_li">
+                    <li><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i><a href="./cart.html">Giỏ hàng</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="Body_item">
+        <div style="background-color: rgb(239, 239, 239);">
+            <div class="dropdown" >
+                <input type="checkbox" id="toggle" class="dropdown-toggle">
+                <label for="toggle" class="dropdown-label"><i class="fa-solid fa-list" style="color: #000000;"></i>  Danh mục sản phẩm</label>
+                <ul class="dropdown-content">
+                <li>Tất cả sản phẩm</li>
+                <li>Thiết bị điện tử</li>
+                <li>Sách</li>
+                <li>Đồ tiêu dùng</li>
+                <li>Thời trang</li>
+                </ul>
+            </div>
+        </div>
+        <div id="Iphone_11_promax">
+            <img src="../img/iphone11promax.jpg" alt="Điện thoại 11promax á nghen">
+            <p> Iphone 11 promax </p>
+            <label>20.000.000đ</label>
+            <i class="fa-solid fa-cart-shopping" style="color: tomato; cursor: pointer;" onclick="addToCart('Iphone 11 promax', 20000000)"></i> <br>
+            <i class="fa-regular fa-heart"></i><label>46 Đã bán</label>
+            <p>Hà Nội</p>
+        </div>
+
+
+        <div id="Dac_nhan_tam">
+            <img src="../img/DacNhanTam.jpg" alt="Dark nhân tâm">
+            <p> Đắc nhân tâm </p>
+            <label>100.000đ</label>
+            <i class="fa-solid fa-cart-shopping" style="color: tomato; cursor: pointer;" onclick="addToCart('Sách Đắc Nhân Tâm', 100000)"></i> <br>
+            <i class="fa-regular fa-heart"></i><label>46 Đã bán</label>
+            <p>Hà Nội</p>
+        </div>
+
+
+        <div id="Mi_hao_hao">
+            <img src="../img/haohao.jpg" alt="Nghèo">
+            <p> Mì Hảo Hảo </p>
+            <label>90.000đ</label>
+            <i class="fa-solid fa-cart-shopping" style="color: tomato; cursor: pointer;" onclick="addToCart('Mì Hảo Hảo', 90000)"></i> <br>
+            <i class="fa-regular fa-heart"></i><label>46 Đã bán</label>
+            <p>Hà Nội</p>
+        </div>
+
+
+        <div id="Bia">
+            <img src="../img/BiaHeineken.jpg" alt="Thứ 7 máu chảy về đâu ạ">
+            <p> Thùng bia Heineken </p>
+            <label>500.000đ</label>
+            <i class="fa-solid fa-cart-shopping" style="color: tomato; cursor: pointer;" onclick="addToCart('Thùng bia Heineken', 500000)"></i> <br>
+            <i class="fa-regular fa-heart"></i><label>46 Đã bán</label>
+            <p>Hà Nội</p>
+        </div>
+
+
+        <div id="Nuoc_rua_chen">
+            <img src="../img/sunlight.jpg" alt="cảnh lấy vợ">
+            <p>Nước rửa chén sunlight</p>
+            <label>120.000đ</label>
+            <i class="fa-solid fa-cart-shopping" style="color: tomato; cursor: pointer;" onclick="addToCart('Nước rửa chén sunlight', 120000)"></i> <br>
+            <i class="fa-regular fa-heart"></i><label>46 Đã bán</label>
+            <p>Hà Nội</p>
+        </div>
+    </div>
+    <div class="line_1">
+    
+    </div>
+    <!-- FOOTER -->
+
+    <div class="f_page">
+        <!-- <footer> -->
+            <div>
+                <h4>Chắm Sóc Khách Hàng</h4>
+                <p>Trung tâm hỗ trợ</p>
+                <p>Hướng dẫn mua hàng</p>
+            </div>
+
+
+            <div>
+                <h4>Giới Thiệu</h4>
+                <p>Điều khoản</p>
+                <p>Chính sách bảo mật</p>
+                <p> tuyển dụng</p>
+            </div>
+
+
+            <div>
+                <h4>Danh Mục Sản Phẩm</h4>
+                <p>Thời trang</p>
+                <p>Đồ tiêu dùng</p>
+                <p>Thiết bị điện tử</p>
+                <p>Sách</p>
+            </div>
+
+
+            <div>
+                <h4>Theo Dõi Chúng Tôi</h4>
+                <i class="fa-brands fa-facebook"></i><label>Facebook</label><br>
+                <i class="fa-brands fa-instagram"></i><label>Instagram</label><br>
+                <i class="fa-brands fa-twitter"></i><label>Twitter</label>
+            </div>
+
+
+            <div></div>
+
+        <!-- </footer> -->
+    </div>
+   
+
+    <script>
+        function searchProduct() {
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            const products = document.querySelectorAll('.Body_item > div[id]');
+
+            products.forEach(product => {
+                const productName = product.querySelector('p').innerText.toLowerCase();
+
+                if (searchTerm !== "" && productName.includes(searchTerm)) {
+                    product.classList.add('highlight');
+                } else {
+                    product.classList.remove('highlight');
+                }
+            });
+        }
+
+        // Set the initial default value for the input
+        document.getElementById('searchInput').placeholder = "   Tìm kiếm theo tên sản phẩm";
+
+        // Call the searchProduct function whenever the input changes
+        document.getElementById('searchInput').addEventListener('input', searchProduct);
+
+        // thểm sản phẩm vào giỏ hàng
+        function addToCart(productName, productPrice) {
+
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+
+            let existingProduct = cartItems.find(item => item.name === productName);
+
+            if (existingProduct) {
+                // tăng số lượng nếu đã tồn tại sản phẩm trong giỏ hàng
+                existingProduct.quantity += 1;
+            } else {
+                // nếu không có sản phẩn thì tạo thêm sản phẩm mới với giá trị ban đầu bằng 1
+                cartItems.push({ name: productName, price: productPrice, quantity: 1 });
+            }
+
+            // lưu hoặc cập nhật vào localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            alert('Đã thêm sản phẩm vào giỏ hàng.');
+        }
+    </script>
+
+
+</body>
+</html>

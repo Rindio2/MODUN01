@@ -1,0 +1,30 @@
+.container_swap{
+
+width: 100%;
+    
+}
+    
+.div_left{
+    
+width: 50%;
+    
+float: left;
+    
+text-align: left;
+
+color: grey;
+    
+}
+    
+.div_right{
+    
+width: 50%;
+    
+float: left;
+    
+text-align: left;
+    
+}
+    img{
+        width: 90%;
+    }

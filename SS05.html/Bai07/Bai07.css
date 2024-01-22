@@ -1,0 +1,18 @@
+*{
+    background-color: rgb(56, 97, 128);
+    color: aliceblue;
+}
+img{
+    width: 40px;
+    height: 40px;
+}
+.container {
+    display: flex; /* Hiển thị theo flexbox */
+    justify-content: center; /* Căn giữa các box */
+}
+.box {
+    width: 100%; /* Đổi kích thước theo mong muốn */
+    height: 100%; /* Đổi kích thước theo mong muốn */
+    margin: 5px; /* Khoảng cách giữa các box */
+
+}

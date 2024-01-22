@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Viết chương trình cho phép người dùng nhập vào số nguyên x:
+        Nếu x==0 thì in ra x có giá trị là 0;
+        Nếu x>0 thì in ra x là số nguyên dương.
+        Nếu x<0 thì in ra x là số nguyên âm.
+    -->
+    <h2>Nhập vào X số bất kì:</h2>
+    <input type="text" id="numBer" placeholder="Nhập vào 1 số bất kì">
+    <button onclick="kiemTraSoNguyen()">Kiểm tra</button>
+    <button type="button" onclick="resetInput()">Reset</button>
+    <p id="ketqua"></p>
+
+
+    <script>
+
+        function kiemTraSoNguyen(){
+
+            let numBer = document.getElementById("numBer").value;
+
+            numBer = parseInt(numBer);
+
+            if(!isNaN(numBer)){
+
+                if(numBer == 0){
+                    document.getElementById("ketqua").innerHTML = "X có giá trị là 0";
+                }
+                else if(numBer > 0){
+                    document.getElementById("ketqua").innerHTML = "X là số nguyên dương";
+                }
+                else{
+                    document.getElementById("ketqua").innerHTML = "X là số nguyên âm";
+                }
+
+            }
+            else{
+                document.getElementById("ketqua").innerHTML = "Vui lòng nhập số nguyên";
+            }
+
+
+        }
+        function resetInput() {
+            document.getElementById("numBer").value = ""; // Xóa nội dung trong ô input
+            document.getElementById("ketqua").innerHTML = ""; // Xóa kết quả hiển thị
+        }
+        document.addEventListener("keypress", function(event) {
+            if (event.key === 'Enter') {
+                kiemTraSoNguyen();
+            }
+        });
+
+
+    </script>
+
+
+
+</body>
+</html>

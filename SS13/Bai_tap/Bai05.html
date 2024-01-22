@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--   
+        Cho người dùng nhập vào chuỗi kí tự. Viết hàm kiểm tra xem tần suất xuất hiện của mỗi ký tự và in ra chúng
+        Input: “Hello World”
+    -->
+    <h2>Nhập vào chuỗi kí tự:</h2>
+
+    <input type="text" id="inputString">
+
+    <button onclick="tinhTanSuat()">Tính tần xuất</button>
+
+    <p id="result"></p>
+
+
+    <script>
+
+    function tinhTanSuat() {
+        const chuoi = document.getElementById('inputString').value.toLowerCase().replace(/\s/g, ''); // Lấy giá trị từ input, loại bỏ khoảng trắng và chuyển thành chữ thường
+        const tanSuat = {};
+
+        // Tính tần suất xuất hiện của mỗi ký tự trong chuỗi
+        for (let i = 0; i < chuoi.length; i++) {
+            const kyTu = chuoi[i];
+            tanSuat[kyTu] = (tanSuat[kyTu] || 0) + 1;
+        }
+
+        // Hiển thị kết quả tần suất xuất hiện của mỗi ký tự
+        let result = '';
+        for (const kyTu in tanSuat) {
+            result += `Ký tự '${kyTu}' xuất hiện ${tanSuat[kyTu]} lần<br>`;
+        }
+
+        document.getElementById('result').innerHTML = result; // Hiển thị kết quả lên trang web
+    }
+
+    </script>
+
+</body>
+</html>

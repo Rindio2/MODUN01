@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- : Viết chương trình nhập vào số tháng trong năm,in ra số ngày trong tháng đó. -->
+
+    <h2>Nhập vào số tháng:</h2>
+    <input type="text" id="mounth" placeholder="Nhập tháng">
+    <button onclick="kiemTraNgayTrongThang()">Kiểm tra</button>
+    <p id="ketqua"></p>
+
+    <script>
+
+        function kiemTraNgayTrongThang() {
+            // Lấy giá trị nhập vào từ input
+            let mounth = document.getElementById("mounth").value;
+
+            // Chuyển đổi giá trị nhập vào thành số nguyên
+            mounth = parseInt(mounth);
+
+            // Kiểm tra và hiển thị kết quả
+            if (!isNaN(mounth)) {
+                
+                if(mounth >= 1 && mounth <= 12){
+
+                    switch (mounth) {
+                        case 1:
+                        case 3:
+                        case 5:
+                        case 7:
+                        case 9:                 
+                        case 11:
+                            document.getElementById("ketqua").innerHTML = ` tháng ${mounth} có 31 ngày `;
+                            break;
+                        case 2:
+                            document.getElementById("ketqua").innerHTML = ` tháng ${mounth} có 28 ngày hoặc 29 nếu năm nhuận `;
+                            break;
+                        case 4:
+                        case 6:
+                        case 8:
+                        case 10:
+                        case 12:
+                            document.getElementById("ketqua").innerHTML = ` tháng ${mounth} có 30 ngày `;
+                            break;
+                    }
+
+
+                }
+                else{
+                    document.getElementById("ketqua").innerHTML = "Vui lòng nhập đúng tháng";
+                }
+
+
+
+            } else {
+                document.getElementById("ketqua").innerHTML = "Vui lòng nhập đúng tháng";
+            }
+        }
+        document.addEventListener("keypress", function(event) {
+            if (event.key === 'Enter') {
+                kiemTraNgayTrongThang();
+            }
+        });
+
+    </script>
+    
+</body>
+</html>

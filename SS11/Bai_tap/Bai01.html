@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược. 
+        Ví dụ, nếu một mảng chứa các ký tự [ 'c', 's', 'c', '2', '6', '1' ]
+        sau khi thực hiện đảo ngược sẽ là "162csc". 
+    -->
+    
+    
+    <body>
+        <h2>Nhập các ký tự để đảo ngược</h2>
+        <input type="text" id="inputArray" placeholder="Nhập vào 1 mảng bất kì"> <br> <br>
+        <button onclick="daoNguocMang()">Đảo ngược</button> <br>
+        <p id="reversedResult"></p>
+    
+    <script>
+        // JavaScript để đảo ngược ký tự trong mảng
+        function daoNguocMang() {
+            let input = document.getElementById("inputArray").value;
+            let arr = input.split(''); // Chuyển chuỗi nhập vào thành mảng
+    
+          // Sử dụng reverse() để đảo ngược mảng và join() để chuyển mảng thành chuỗi
+            var reversedStr = arr.reverse().join('');
+          
+          // Hiển thị kết quả đảo ngược
+            document.getElementById("reversedResult").innerText = "Kết quả đảo ngược là: " + reversedStr;
+        }
+    </script>
+
+
+</body>
+</html>

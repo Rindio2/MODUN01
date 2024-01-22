@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        
+        Viết chương trình cho phép người dùng nhập điểm các môn:Toán,Lí,Hoá,
+        Văn, Sử , Địa (thang điểm 10);
+        Sau đó tính điểm trung bình các môn học
+        Hiển thị kết quả học tập theo loại như sau:
+
+        8.0 <=ĐTB<=10: xếp loại GIỎI.
+        6.5<=ĐTB<=7.9: xếp loại KHÁ.
+        5.0<=ĐTB<=6.4: xếp loại TRUNG BÌNH.
+        ĐTB<5.0 : xếp loại YẾU.
+
+    -->
+
+    <h3>Nhập vào điểm Toán:</h3>
+    <input type="text" id="toan" placeholder="Nhập vào điểm">
+
+    <h3>Nhập vào điểm Lí:</h3>
+    <input type="text" id="li" placeholder="Nhập vào điểm">
+
+    <h3>Nhập vào điểm Hóa:</h3>
+    <input type="text" id="hoa" placeholder="Nhập vào điểm">
+
+    <h3>Nhập vào điểm Văn:</h3>
+    <input type="text" id="van" placeholder="Nhập vào điểm">
+
+    <h3>Nhập vào điểm Sử:</h3>
+    <input type="text" id="su" placeholder="Nhập vào điểm">
+
+    <h3>Nhập vào điểm địa:</h3>
+    <input type="text" id="dia" placeholder="Nhập vào điểm">
+
+    <br>
+    <br>
+
+    <button onclick="kiemTraDTB()">Kiểm tra</button>
+
+    <button type="button" onclick="resetInput()">Reset</button>
+    <p id="ketqua"></p>
+
+
+    <script>
+
+        function resetInput() {
+            document.getElementById("toan").value = ""; // Xóa nội dung trong ô input
+            document.getElementById("li").value = "";
+            document.getElementById("hoa").value = "";
+            document.getElementById("van").value = "";
+            document.getElementById("su").value = "";
+            document.getElementById("dia").value = "";
+            document.getElementById("ketqua").innerHTML = ""; // Xóa kết quả hiển thị
+        }
+        document.addEventListener("keypress", function(event) {
+            if (event.key === 'Enter') {
+                kiemTraDTB();
+            }
+        });
+
+        function kiemTraDTB(){
+            
+            let DTB;
+            let toan = document.getElementById("toan").value;
+            let li = document.getElementById("li").value;
+            let hoa = document.getElementById("hoa").value;
+            let van = document.getElementById("van").value;
+            let su = document.getElementById("su").value;
+            let dia = document.getElementById("dia").value;
+
+            
+            
+            toan = parseFloat(toan);
+            li = parseFloat(li);
+            hoa = parseFloat(hoa);
+            van = parseFloat(van);
+            su = parseFloat(su);
+            dia = parseFloat(dia);
+
+            DTB = parseFloat((toan+li+hoa+van+su+dia)/6);
+
+            // console.log(DTB);
+
+            if(toan,li,hoa,van,su,dia <= 10){
+                
+                if( DTB >= 8 ){
+                    
+                    document.getElementById("ketqua").innerHTML = " Loại Giỏi ";
+                }
+                else if(DTB >= 6.5 && DTB <= 7.9){
+                    document.getElementById("ketqua").innerHTML = " Loại Khá ";
+                }
+                else if(DTB >= 5 && DTB <= 6.4){
+                    document.getElementById("ketqua").innerHTML = " Loại Trung Bình ";
+                }
+                else if(DTB < 5){
+                    document.getElementById("ketqua").innerHTML = " Loại Yếu ";
+                    
+                }
+                
+                
+
+            }
+            else{
+                resetInput();
+                document.getElementById("ketqua").innerHTML = "Vui lòng nhập đúng điểm số";
+            }
+            
+            console.log(3>2>1);
+
+
+        }
+        
+
+
+    </script>
+
+
+</body>
+</html>

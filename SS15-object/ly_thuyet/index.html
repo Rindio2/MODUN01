@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!--  
+
+        object: gọi là đối tượng
+        thuộc kiểu dữ liệu tham chiếu, kiểu dữ liệu phức tạp, reference type
+        I . các cách khởi tạo đối tượng 
+            1. let std = {};
+            2. let std = new Object(); ít dùng
+            3. dùng hàm tạo contructor; ít dùng
+            4. dùng class - ES6
+                Lập trình hướng đối tượng (Modun04) - OOP - TYPESCRIPT
+                    + đóng gói
+                    + trù tượng
+                    + đa hình
+                    + kế thừa
+        CRUD với object
+        1. Create - thêm
+        2. R - đọc
+        3. U - cập nhật
+        4. D - xóa
+
+    -->
+
+
+    <script>
+
+        // cách 1:
+        // let std = {};
+
+        // let std1= {
+        //     name: "hoa",
+        //     age: 23,
+        //     id: "HN"
+        // }
+        let std2= {
+            name: "hong",
+            age: 23,
+            id: "HCM"
+        }
+
+        // function student(name,age,id){
+        //     this.name = name;
+        //     this.age = age;
+        //     this.id = id;
+        // }
+
+        // let std_1 = student("hoa",25,"HN");
+
+        
+
+        //C1 thêm 1 thuộc tính 
+        // student.address="HN";
+
+
+        //C2 
+        // student["address"]="HN";
+
+        for (const op_1 in std2) {
+            console.log(std2[op_1]);
+        }
+
+
+        
+
+
+
+        // cách 2:
+        // let std = new Object();
+
+
+
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        let arr=[1,2,3,4,5,6,7,8,9,10]
+        Viết hàm trả về tất cả các cặp số có tổng bằng 10
+    -->
+
+    <h2>Tìm cặp số có tổng bằng 10</h2>
+    <button onclick="timCapSo()">Tìm</button>
+    <p id="result"></p>
+
+    <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        let timCapSo = () => {
+            let pairs = [];
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i + 1; j < arr.length; j++) { // Start j from i + 1 to avoid duplicate pairs
+                    if (arr[i] + arr[j] === 10) {
+                        pairs.push([arr[i], arr[j]]);
+                    }
+                }
+            }
+
+            if (pairs.length === 0) {
+                document.getElementById("result").innerText = "Không tìm thấy cặp số nào có tổng bằng 10";
+            } else {
+                let resultString = "Các cặp số có tổng bằng 10:<br>";
+                pairs.forEach((pair, index) => {
+                    resultString += `Cặp thứ ${index + 1}: ${pair[0]} và ${pair[1]}<br>`;
+                });
+                document.getElementById("result").innerHTML = resultString;
+            }
+        }
+    </script>
+
+</body>
+</html>

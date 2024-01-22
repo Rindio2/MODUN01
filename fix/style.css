@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 400px;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
+                0 5px 12px -2px rgba(0, 0, 0, 0.1),
+                0 18px 36px -6px rgba(0, 0, 0, 0.1);
+  
+  }
+  
+  .container .title {
+  
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .container form input {
+    display: none;
+  }
+  
+  
+  .container form .category {
+    margin-top: 10px;
+    padding-top: 20px;
+  
+    display: grid;
+    grid-template-rows: repeat(0, 1fr) ;
+    grid-gap: 15px;
+  
+  }
+  
+  .category label {
+    /* width: 100%;
+    height: 65px; */
+    height: 145px;
+    padding: 20px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    
+  }
+  
+  /* label:nth-child(2), label:nth-child(3), label:nth-child(4) {
+    margin: 15px 0
+  ;} */
+  
+  #mastercard:checked ~ .category .mastercardMethod .check{
+    display: block;
+  }
+  #paypal:checked ~ .category .paypalMethod .check{
+    display: block;
+  }
+  #amex:checked ~ .category .amexMethod .check{
+    display: block;
+  }
+  #discover:checked ~ .category .discoverMethod .check{
+    display: block;
+  }
+  #visa:checked ~ .category .visaMethod .check{
+    display: block;
+  }
+  
+  #mastercard:checked ~ .category .mastercardMethod {
+    box-shadow: 0 0 0 1px #6064b6;
+  }
+  #paypal:checked ~ .category .paypalMethod {
+    box-shadow: 0 0 0 1px #6064b6;
+  }
+  #amex:checked ~ .category .amexMethod {
+    box-shadow: 0 0 0 1px #6064b6;
+  }
+  #discover:checked ~ .category .discoverMethod {
+    box-shadow: 0 0 0 1px #6064b6;
+  }
+  #visa:checked ~ .category .visaMethod {
+    box-shadow: 0 0 0 1px #6064b6;
+  }
+  
+  
+  label .imgName {
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .imgName span {
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .imgName .imgContainer {
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+   
+    
+    
+  }
+  
+  img {
+    width: 50px;
+    height: auto;
+  }
+  
+  .check {
+    display: none;
+  }
+  
+  
+  
+  .check i {
+    font-size: 18px;
+  }
+  

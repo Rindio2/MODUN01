@@ -1,0 +1,63 @@
+.card {
+    border: 5px solid transparent; /* Đặt viền mặc định là trong suốt */
+    transition: border-color 0.3s; /* Hiệu ứng chuyển động khi viền thay đổi */
+    height: 140px;
+    width: 190px;
+    border-radius: 10px;
+}
+
+.card.selected {
+    border-color: rgb(49, 114, 147); /* Màu viền xanh khi được chọn */
+}
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    width: 140px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.saved-card-info img {
+    max-width: 50px; /* Đặt kích thước tối đa */
+    max-height: 50px;
+    margin-right: 10px; /* Khoảng cách giữa hình và văn bản khác */
+}
+
+/* Các hình trong danh sách thẻ */
+.card {
+    width: 100px; /* Đặt kích thước mặc định cho hình */
+    height: auto; /* Tự động tính chiều cao để giữ tỷ lệ khung hình */
+}
+
+/* Các hình khi được chọn */
+.card.selected {
+    border-color: green;
+    width: 120px; /* Đặt kích thước lớn hơn khi được chọn */
+}

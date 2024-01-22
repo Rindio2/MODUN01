@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 5px;
+    }
+    .box1{
+        /* margin-top: 50px; */
+        position: relative;
+    }
+
+    .container{
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        position: relative;
+    }
+    .absolute{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background-color: bisque;
+        top:0
+    }
+</style>
+<body>
+    <!-- Định vị vị trí các khối
+    1. static : trạng thái mặc định
+    2. relative: vị trí tương đối
+    3. absolute: vị trí tuyệt đối
+    4. fixed
+    5. sticky
+
+        RELATIVE
+        -  khi 1 element có thuộc tính là relative thì nó sẽ lấy vị trí ban đầu của nó làm gốc
+        - căng chỉnh:
+        top-bottom-left-right
+
+        ABSOLUTE
+        - Nó sẽ ăn theo thằng cha chứa nó gần nhất có thuộc tính là position
+        - Nếu không có cha thì sẽ ăn theo kích thước màng hình
+
+        FIXED
+        - 
+    -->
+
+
+    <div class="box box1">Box1</div>
+
+
+
+    <div class="box box2">Box2</div>
+    
+
+    A.
+    <div class="container">
+        box container
+        <div class="absolute">
+            box-absolute
+        </div>
+    </div>
+</body>
+</html>

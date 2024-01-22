@@ -1,0 +1,27 @@
+input{
+    width: 40%; /* Đổi kích thước theo mong muốn */
+    height: 40px; /* Đổi kích thước theo mong muốn */
+    background-color: #ffffff; /* Đổi màu theo mong muốn */
+    margin: 5px;
+    /* Khoảng cách giữa các box */
+    border-radius: 5px;
+}
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+button{
+    background-color: #1ef490;  
+    border: none;  color: white;  
+    padding: 16px 32px;  
+    text-align: center;  
+    font-size: 16px;  
+    margin: 4px 2px;  
+    opacity: 0.6;  
+    transition: 0.3s;  
+    display: inline-block;  
+    text-decoration: none;  
+    cursor: pointer;
+}
+button:active{
+    background-color: aliceblue;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Thông tin sản phẩm</legend>
+            <label>Tên sản phẩm:</label>
+            <input type="text" name="tensanpham" value="" />
+            <label>Số lượng:</label>
+            <input type="number" name="soluong" value="1" /><br />
+        </fieldset>
+    </form>
+
+    <form>
+        <fieldset>
+            <legend>Thông tin giao hàng</legend>
+            <label>Họ và tên:</label>
+            <input type="text" name="hovaten" value="" />
+            <label>Email:</label>
+            <input type="text" name="email" value="" />
+            <label>Số điện thoại:</label>
+            <input type="text" name="sodienthoai" value="" />
+            <label>Địa chỉ:</label>
+            <input type="text" name="diachi" value="" /><br />
+        </fieldset>
+        <form>
+            <fieldset>
+                <legend>Thông tin thanh toán</legend>
+                <label>Phương thức thanh toán:</label>
+                <select name="PTTT">
+                    <option value="khinhanhang">Khi Nhận hàng</option>
+                    <option value="hp">Qua thẻ ATM</option>
+                    <option value="dn">Trả góp</option>
+                    <option value="sg">Qua Visa</option>
+                 </select>
+            </fieldset>
+        </form>
+    </form>
+    <input type="submit" value="Đặt hàng">
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: aquamarine;
+        height: 100px;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .item{
+        background-color: brown;
+        margin: 5px;
+        flex-direction: row;
+        height: 20px;
+    }
+
+</style>
+<body>
+    <!-- dùng để căn chỉnh layout 
+        display: flex
+    1. flex-container
+    => cha chứa các con
+
+    2. flex-item
+    => là con
+
+    3. trục
+    3.1 trục main-axis: trục chính;
+        -trục main-axis ăn theo thuộc tính justify-content;
+        justify-content:
+        1. center : căn giữa
+        2. space-beetween : căn ra 2 về và giữa
+        3. space-around : căn điều khoảng cách giữa các thẻ 1/2
+        4. space-evenly : cách điều
+    3.2 trục cross-axis : trục phụ;
+        -trục cross-axis ăn theo align-item;
+
+    -2 trục này luôn vuông góc với nhau
+    -
+    4. thuộc tính flex-direction: mặc định là row
+    - Khi flex-direction: row thì trục main-axis nằm ngang còn trục dọc là cross-axis nằm dọc
+    - Khi flex-direction: column thì ngược lại.
+    -->
+    <div class="container">
+        <div class="item"> 
+            item
+            <div class="item2"></div>
+            <div class="item3"></div>
+            <div class="item4"></div>
+            <div class="item5"></div>
+        </div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+        <div class="item">item</div>
+    </div>
+</body>
+</html>

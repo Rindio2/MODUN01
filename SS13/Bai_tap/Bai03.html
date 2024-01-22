@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Thực thi hàm vừa khởi tạo -->
+
+    <h2>Tính giai thừa</h2>
+    <input type="text" id="number">
+    <button onclick="tinhGiaiThua()">Tính giai thừa</button>
+    <p id="result"></p>
+
+
+    <script>
+
+        let tinhGiaiThua = () =>{
+            let input = parseInt(document.getElementById("number").value);
+            let result =1;
+            for (let i= 1; i<= input; i++){
+                result *=i;
+            }
+            document.getElementById("result").innerText = `kết quả giai thừa của ${input} là: ` + result;
+
+        }
+
+
+    </script>
+
+</body>
+</html>

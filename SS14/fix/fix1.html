@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //bài 1
+    let input = prompt("Nhập ngẫu nhiên 5 chữ số nguyên");
+    let numbers = input.split(' ');
+    let uniqueNumbers = [...new Set(numbers)];
+
+    for (let i = 0; i < uniqueNumbers.length; i++) {
+        let count = 0;
+        for (let j = 0; j < numbers.length; j++) {
+            if (uniqueNumbers[i] === numbers[j]) {
+            count++;
+            }
+        }
+        if (count > 1) {
+            uniqueNumbers.splice(i, 1);
+            // Decrement i to correctly check the next element
+        }
+        
+
+    }
+    console.log(uniqueNumbers);
+
+  </script>
+  <!-- let numbers = [1,5,8,7,9,6,5,41,2,6,55,4,8];
+  // let max = numbers[0];
+  // let index = 0;
+  // for (let i = 1; i< numbers.length; i++) {
+  //   if (numbers[i] > max) {
+  //     max = numbers[i];
+  //     index = i;
+  //   }
+  //   }
+  //   alert("max: " + max + " at position " + index); -->
+</body>
+</html>

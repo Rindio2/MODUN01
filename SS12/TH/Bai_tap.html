@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>C - để nhập một thêm công việc vào list work</p>
+    <p>R - in ra các công viẹc trong list work</p>
+    <p>U - update một công việc thứ x trong list và in ra list work</p>
+    <p>D - xóa một công việc thứ x trong list và in ra list work</p>
+    <p>E - nhập công việc liên tục vào list (kết thúc vòng lập bằng E và in ra màng hình list work)</p>
+
+
+    <input type="text" placeholder="Enter" id="info">
+
+    <button onclick="joy()">thực hiện</button>
+
+    <p id="todoList"></p>
+
+    
+    <script>
+
+
+        let todoList = ["Go to school at 7am", "Read bool at 12am"];
+
+        function joy() {
+            
+
+            
+            let input = document.getElementById("info").value.toUpperCase();
+
+            switch (input) {
+                case "C":
+
+                    let newjob = prompt("Nhập vào công việc cần thêm vào list");
+                    // kiểm tra công việc nhập vào
+                    if (newjob !== null && newjob !== "") {
+                        todoList.push(newjob);
+                    }
+                    displayList();
+                    break;
+            
+                case "R":
+
+                    displayList();
+                    break;
+                
+                case "U":
+                    let where = prompt("vị trí cần sửa");
+                    if (where >= 0 && where < todoList.length) {
+                        let updatedJob = prompt("Nhập nội dung muốn cập nhật:");
+                        if (updatedJob !== null && updatedJob !== "") {
+                            todoList[where-1] = updatedJob;
+                        }
+                        displayList();
+                    } else {
+                        alert("Vị trí không hợp lệ.");
+                    }
+                    
+                    break;
+
+                case "D":
+                    
+                    let where_2 = prompt("vị trí cần xóa");
+                    if (where_2 >= 0 && where_2 < todoList.length) {
+                        
+                        todoList.splice(where_2, 1);
+                        displayList();
+                    } else {
+                        alert("Vị trí không hợp lệ.");
+                    }
+
+                    break;
+
+                case "E":
+                    let creatJob;
+                    do{
+                        creatJob = prompt("Nhập công việc cần thêm");
+                        // nếu khác E thì cập nhật công việc vào list
+                        if (creatJob && creatJob !== "E") {
+                            todoList.push(creatJob);
+                        }
+
+                    }while (creatJob !== "E"); // nếu nhập vào E thì dừng vòng lập và in ra kết quả
+                    displayList();
+                    break;
+
+                default:
+                    alert("Hãy nhập C, R, U, D hoặc E.");
+            }
+
+
+        }
+
+        function displayList() {
+            document.getElementById("todoList").innerText = "List công việc: \n" + todoList.join("\n");
+        }
+        document.addEventListener("keypress", function(event) {
+            if (event.key === 'Enter') {
+                joy();
+            }
+        });
+
+
+    </script>
+
+
+</body>
+</html>

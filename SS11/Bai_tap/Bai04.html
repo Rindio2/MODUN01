@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- : Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa.
+        Các kí tự hoa chuyển thành chữ thường.
+        Ví dụ: nếu bạn nhập vào chuỗi 'Keep Calm And Code On' kết quả của chương trình là 'kEEP cALM aND cODE oN'.
+    -->
+    <h2>Nhập các ký tự để chuyển</h2>
+    <input type="text" id="inputArray" placeholder="Nhập vào 1 đoạn văn bản bất kì"> <br> <br>
+    <button onclick="chuyenChu()">chuyển</button> <br>
+    <br>
+    <p id="arrChuyen"></p>
+
+    <script>
+        function chuyenChu(){
+
+            let input = document.getElementById("inputArray").value;
+            let arr = input.split('');
+
+            let arrChuyen = '' ;
+            for (let i = 0; i < arr.length; i++) {
+                let char = arr[i];
+                if (char === char.toUpperCase()) {
+                    // Nếu là chữ hoa, chuyển thành chữ thường
+                    arrChuyen += char.toLowerCase();
+                } else {
+                    // Nếu là chữ thường, chuyển thành chữ hoa
+                    arrChuyen += char.toUpperCase();
+                }
+            }
+
+
+            document.getElementById("arrChuyen").innerText =  arrChuyen;
+
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

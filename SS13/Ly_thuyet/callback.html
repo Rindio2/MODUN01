@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  
+        Call back là 1 hàm được chuyền làm tham số của hàm khác
+    -->
+
+    <script>
+
+        // console.log("1111");
+        // setTimeout( () => {
+        //     console.log("22222");
+        // },1000);
+        // console.log("33333");
+        let std;
+        function xinSoDt(callback11) {
+            console.log("Chung gọi cho Kiên xin số Vân Anh");
+            console.log("Kiên bảo đợi 1 tí");
+            setTimeout(() => {
+                console.log("đã tìm thấy số");
+                std = 1234542;
+                callback11(std);
+            }, 5000);
+            
+        }
+
+        function khiNaoCoSoMoiGoi(stdVA) {
+            console.log("goi cho VA theo", stdVA);
+        }
+
+        xinSoDt(khiNaoCoSoMoiGoi);
+
+
+    </script>
+</body>
+</html>

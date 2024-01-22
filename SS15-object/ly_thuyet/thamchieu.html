@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--  
+        Tham chiếu giá trị trong object
+    -->
+
+    <script>
+
+        let a= 5;
+        let b= a;
+        a =15;
+        console.log(b); // 5
+
+        let obj1={
+            name: "hoa"
+        }
+        let obj2 = obj1;
+        obj2.name = "hong";
+        console.log(obj2.name); // hong
+
+        // làm thế nào để khi thay đổi thuộc tính của obj2 mà không ảnh hưởng obj1
+        // sử dụng toán tử spread 
+        let obj3 = {...obj1};
+        obj1.name = "mai";
+        console.log(obj3);
+
+        
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>

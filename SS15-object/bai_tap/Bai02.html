@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <input type="text" id="input">
+    <button onclick="addToCart()">mua</button>
+    
+
+    <script>
+
+        let products=[
+            {
+                name: "iphone5",
+                price: 5000,
+                id: 5
+
+            },
+            {
+                name: "iphone6",
+                price: 6000,
+                id: 6
+
+            },
+            {
+                name: "iphone7",
+                price: 7000,
+                id: 7
+
+            },
+            {
+                name: "iphone8",
+                price: 8000,
+                id: 8
+
+            }
+        ]
+        let cart = [];
+
+        //đi mua hàng rồi tính giá tiền phải trả khi mua 
+        //xem sản phẩm có trong cửa hàng hay không bằng name
+        //nếu có cho đi mua nếu không có dừng lại
+        //kiểm tra xem sản phẩm đang mua có trong giỏ hàng hay chưa, nếu có thì tăng số lượng, nếu không có thì thêm vào giỏ hàng
+        //tính bill phải trả.
+
+        
+        function addToCart() {
+            
+            let valueInput = document.getElementById("input").value;
+
+            // tìm sản phẩm bằng name
+            let product = products.find((prod) => prod.name.toLowerCase() === valueInput.toLowerCase());
+
+            // kiểm tra sản phẩm và tính bill
+            if (product) {
+                
+                let cartItem = cart.find((item) => item.name.toLowerCase() === valueInput.toLowerCase());
+
+                if (cartItem) {
+                    // nếu có thì tăng số lượng sản phẩm
+                    cartItem.quantity++;
+                } else {
+                    // nếu không có sản phẩm thì khởi tạo sản phẩm vào giỏ hàng
+                    cart.push({ ...product, quantity: 1 });
+                }
+
+                // tính bill
+                let totalBill = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+                console.log("Product added to cart:", valueInput);
+                console.log("Total bill:", totalBill);
+            } else {
+                console.log("Product not found in the store.");
+            }
+
+        }
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

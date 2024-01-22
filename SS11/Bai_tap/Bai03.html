@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input{
+        height: 20px;
+        width: 300px;
+    }
+</style>
+<body>
+
+    <!-- Cho 1 một mảng  let  numbers=[1,5,8,7,9,6,5,41,2,6,55,4,8];
+    Tìm số lớn nhất trong mảng
+    -->
+    
+    <h2>Nhập một mảng các số cách nhau bằng space</h2>
+    <input type="text" id="inputArray" placeholder="Nhập vào 1 mảng bất kì ngăn cách bằng space"> <br> <br>
+    <button onclick="timSoLonNhat()">tìm số lớn nhất</button> <br>
+    <br>
+    <p id="max"></p>
+
+
+    <script>
+        function timSoLonNhat() {
+            let input = document.getElementById("inputArray").value;
+            let arr = input.split(/\s+/).map(item => parseInt(item.trim())); // Chuyển các phần tử thành số nguyên
+
+            let max = arr[0];
+
+            for (let i = 1; i < arr.length; i++) {
+                if (!isNaN(arr[i]) && max < arr[i]) {
+                    max = arr[i];
+                }
+            }
+
+            document.getElementById("max").innerText = "Số lớn nhất là: " + max;
+        }
+
+
+    </script>
+
+
+</body>
+</html>

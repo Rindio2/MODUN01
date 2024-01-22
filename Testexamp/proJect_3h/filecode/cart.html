@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./cart.css">
+    <script src="https://kit.fontawesome.com/72df7e5c59.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header_band" id="rikkeiAcademyShop">
+            RIKKEI_ACADEMY_SHOP
+        </div>
+
+        <div class="header_search">
+            <input class="header_input" type="text" placeholder="   Tìm kiếm theo tên sản phẩm">
+            <i class="fa-solid fa-magnifying-glass" style="color: white; width: 40px; height: 40px;"></i>
+        </div>
+
+        <div>
+            <nav>
+                <ul class="custom_li">
+                    <li><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i><a href="#">Giỏ hàng</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="Body_item">
+        <!-- bảng hiển thị sản phẩm và giá đã thêm vào giỏ hàng -->
+        <h2>Your Shopping Cart</h2>
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cartBody"></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"></td>
+                    <td id="totalPrice">Total: 0đ</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <button class="buyProduct">Mua</button>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="f_page">
+        <div>
+            <h4>Chăm Sóc Khách Hàng</h4>
+            <p>Trung tâm hỗ trợ</p>
+            <p>Hướng dẫn mua hàng</p>
+        </div>
+
+        <div>
+            <h4>Giới Thiệu</h4>
+            <p>Điều khoản</p>
+            <p>Chính sách bảo mật</p>
+            <p>tuyển dụng</p>
+        </div>
+
+        <div>
+            <h4>Danh Mục Sản Phẩm</h4>
+            <p>Thời trang</p>
+            <p>Đồ tiêu dùng</p>
+            <p>Thiết bị điện tử</p>
+            <p>Sách</p>
+        </div>
+
+        <div>
+            <h4>Theo Dõi Chúng Tôi</h4>
+            <i class="fa-brands fa-facebook"></i><label>Facebook</label><br>
+            <i class="fa-brands fa-instagram"></i><label>Instagram</label><br>
+            <i class="fa-brands fa-twitter"></i><label>Twitter</label>
+        </div>
+    </div>
+
+    <script>
+        let rikkeiAcademyShop = document.getElementById('rikkeiAcademyShop');
+
+        // Thêm sự kiện click
+        rikkeiAcademyShop.addEventListener('click', function() {
+            // Chuyển hướng trang khi click
+            window.location.href = './after_login.html';
+        });
+        // hiển thị sản phẩm và tổng giá
+        function displayCart() {
+            
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            
+            let cartBody = document.getElementById('cartBody');
+
+            // reset lại cartBody
+            cartBody.innerHTML = '';
+
+            
+            let totalPrice = 0;
+            cartItems.forEach((item, index) => {
+                let row = cartBody.insertRow();
+
+                let cellProduct = row.insertCell(0);
+                cellProduct.textContent = item.name;
+
+                let cellPrice = row.insertCell(1);
+                cellPrice.textContent = item.price + 'đ';
+
+                let cellQuantity = row.insertCell(2);
+                cellQuantity.textContent = item.quantity;
+
+                let cellTotalPrice = row.insertCell(3);
+                let totalItemPrice = item.price * item.quantity;
+                cellTotalPrice.textContent = totalItemPrice + 'đ';
+                totalPrice += totalItemPrice;
+
+                let cellAction = row.insertCell(4);
+                cellAction.innerHTML = `<button onclick="increaseQuantity(${index})">+</button>
+                                       <button onclick="decreaseQuantity(${index})">-</button>
+                                       <button onclick="removeItem(${index})">Remove</button>`;
+            });
+
+            // tổng giá
+            document.getElementById('totalPrice').textContent = 'Total: ' + totalPrice + 'đ';
+        }
+
+        // tăng số lượng sản phẩm
+        function increaseQuantity(index) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems[index].quantity++;
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCart();
+        }
+
+        // giảm số lượng sản phẩm
+        function decreaseQuantity(index) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            if (cartItems[index].quantity > 1) {
+                cartItems[index].quantity--;
+            }
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCart();
+        }
+
+        // xóa sản phẩm
+        function removeItem(index) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            displayCart();
+        }
+
+        
+        window.onload = displayCart;
+    </script>
+</body>
+</html>

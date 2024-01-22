@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+        string + number = string
+
+        Toán tử trong js
+
+        1. toán tử số học (+,-,*,/,%,**)
+        2. toán tử logic ()
+            - || (or)
+                + 1 trong các trường hợp thỏa mãng là được
+                + lấy trusthy nếu không sẽ lấy cuối cùng
+            - && (and)
+                + tất cả các trường hợp phải thỏa mãn
+                + lấy falsy không có sẽ lấy cuối
+            
+            - trusthy : không phải falsy
+            - falsy : flase, 0, NaN, underfined, null, "",''
+            - trong phép toán có || và && thì sẽ ưu tiên && trước rồi mới đến ||
+        3. toán tử so sánh
+            - ==, ===, >, <, >=, <=, !=, !==
+            - == so sánh giá trị
+            - === so sánh giá trị và kiểu dữ liệu
+        4. toán tử tăng giảm
+            - ++, --
+
+
+    -->
+
+    <script>
+        let result= '8'+ 4 +3;
+        console.log(2 && 3);
+        let a = 5;
+        let b = "5";
+        console.log( a == b); // true
+        console.log( a === b); // khác kiểu dữ liệu false
+
+        console.log( a != b); // khác kiểu dữ liệu false
+        console.log( a !== b); // so sách khác giá trị or dữ liệu : true
+
+        let count=1;
+        count++; // hậu tố tăng sau
+        ++count; // tiền tố tăng trước  
+
+    </script>
+
+
+</body>
+</html>

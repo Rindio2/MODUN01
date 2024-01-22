@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!--  
+
+        1. xóa id đối tượng có id=13
+        2. thêm thuộc tính address vào đối tượng có id=14
+        3. cập nhật giá trị thuộc tính name thành "ánh" cho đối tượng có id=15
+
+
+
+    -->
+
+
+    <script>
+
+        let students = [
+            {
+                name: "hoa",
+                age: 25,
+                id: 12
+            },
+            {
+                name: "hồng",
+                age: 25,
+                id: 13
+            },
+            {
+                name: "nhung",
+                age: 25,
+                id: 14
+            },
+            {
+                name: "vân",
+                age: 25,
+                id: 15
+            }
+        ]
+
+
+        //1
+        students = students.filter(student => student.id !== 13);
+        
+       
+
+        //2
+        let student_Address = students.find(student => student.id === 14);
+        if (student_Address) {
+            student_Address.address = "HCM";
+        }
+
+
+        //3
+        let student_Update = students.find(student => student.id === 15);
+        if (student_Update) {
+            student_Update.name = "ánh";
+        }
+        console.log(students);
+
+    </script>
+
+</body>
+</html>

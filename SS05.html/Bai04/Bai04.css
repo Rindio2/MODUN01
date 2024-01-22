@@ -1,0 +1,30 @@
+*{
+    background-color: rgb(200, 197, 197);
+}
+
+.container {
+    display: flex; /* Hiển thị theo flexbox */
+    justify-content: center; /* Căn giữa các box */
+}
+  
+.box {
+    width: 100%; /* Đổi kích thước theo mong muốn */
+    height: 100%; /* Đổi kích thước theo mong muốn */
+    background-color: #ccc; /* Đổi màu theo mong muốn */
+    margin: 5px; /* Khoảng cách giữa các box */
+
+}
+img{
+    width: 90%;
+    margin-left: 5%;
+}
+h1{
+    text-align: center;
+}
+bgkdiv{
+    background-color: white;
+}
+h3,p{
+    margin-left: 5%;
+    background-color: white;
+}

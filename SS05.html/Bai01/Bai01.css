@@ -1,0 +1,40 @@
+*{
+    background-color: rgb(215, 215, 215);
+}
+.container_swap{
+
+    width: 100%;
+        
+}
+        
+.div_left{
+        
+    width: 50%;
+        
+    float: left;
+        
+    text-align: left;
+    
+        
+}
+        
+.div_right{
+        
+    width: 50%;
+        
+    float: left;
+        
+    text-align: left;
+     
+}
+
+.container {
+    display: flex;
+    align-items: center; /* Canh các phần tử theo chiều dọc */
+}
+.container img {
+    display: inline-block; /* Hiển thị ảnh như một phần tử inline để có thể canh chỉnh cùng với h3 */
+    width: 100px; /* Độ rộng của ảnh */
+    height: auto; /* Chiều cao tự điều chỉnh theo tỉ lệ */
+    margin-right: 10px; /* Khoảng cách giữa ảnh và h3 */
+}

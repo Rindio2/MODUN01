@@ -1,0 +1,97 @@
+<!-- Login Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f2f2f2; /* Optional: Set a background color */
+        }
+
+        .login_content {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc; /* Add a border with a light gray color */
+            border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+            background-color: white; /* Optional: Set a background color for the content */
+        }
+
+        .login_content h1 {
+            margin-bottom: 20px;
+        }
+
+        .login_content p {
+            margin-top: 10px;
+        }
+
+        .login_content input {
+            margin-bottom: 10px;
+            padding: 5px; /* Optional: Add padding to the input fields */
+        }
+
+        .login_content button {
+            margin-top: 10px;
+            padding: 8px 15px; /* Optional: Add padding to the button */
+            background-color: #4caf50; /* Optional: Set a background color for the button */
+            color: white; /* Optional: Set text color for the button */
+            border: none; /* Optional: Remove default button border */
+            border-radius: 5px; /* Optional: Add border-radius for rounded button corners */
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login_content">
+        <h1>Login</h1>
+        <p>Username</p>
+        <input type="text" placeholder="Tài khoản" id="login_user">
+        <p>Password</p>
+        <input type="password" placeholder="Mật khẩu" id="login_password"> <br>
+        <button onclick="login()">Đăng nhập</button>
+        <a href="../account/signup.html">Đăng kí</a>
+
+    </div>
+    
+
+    <script>
+        function login() {
+            let username = document.getElementById('login_user').value;
+            let password = document.getElementById('login_password').value;
+
+            // Lấy thông tin người dùng đã đăng ký từ local storage
+            let registeredUsers = localStorage.getItem('registeredUsers');
+            if (!registeredUsers) {
+                alert("Tài khoản không tồn tại. Vui lòng đăng ký trước.");
+                return;
+            }
+
+            // Chuyển đổi chuỗi JSON từ local storage thành đối tượng JavaScript
+            registeredUsers = JSON.parse(registeredUsers);
+
+            // Kiểm tra xem thông tin đăng nhập có khớp với thông tin đã đăng ký không
+            let userFound = registeredUsers.find(user => user.username === username && user.password === password);
+
+            if (userFound) {
+                alert("Đăng nhập thành công!");
+                // Redirect hoặc thực hiện các hành động sau khi đăng nhập thành công
+                window.location.href = "../filecode/after_login.html";
+            } else {
+                alert("Sai tài khoản hoặc mật khẩu. Vui lòng thử lại.");
+            }
+        }
+    </script>
+</body>
+</html>

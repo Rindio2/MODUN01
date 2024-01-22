@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  
+
+        Event là các sự kiện tương tác như bàn phím, click chuột
+
+
+
+
+
+    -->
+
+    <button id="btn"></button>
+
+    <script>
+        let btn = document.getElementById("btn").addEventListener("click",()=>{
+            alert("xin chao");
+        })
+        document.getElementsByTagName("body")[0].addEventListener("keypress", (event)=>{
+            console.log(event.keyCode);
+        })
+    </script>
+</body>
+</html>

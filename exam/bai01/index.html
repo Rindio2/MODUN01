@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>Select Card</h1>
+    <div class="">
+        <img class="card" src="../img/American-Express-Emblema.png" alt="" onclick="addToCard(this)">
+        <img class="card" src="../img/Mastercard-Logo-2016-2020.png" alt="" onclick="addToCard(this)">
+        <img class="card" src="../img/OIP.jpg" alt="" onclick="addToCard(this)">
+        <img class="card" src="../img/Paypal-Logo-2007.png" alt="" onclick="addToCard(this)">
+        <img class="card" src="../img/R.png" alt="" onclick="addToCard(this)">
+    </div>
+    <form id="cardForm" action="">
+        <div>
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber">
+        </div>
+        <div>
+            <label for="dayExpiry">Expiry Date</label> 
+            <input type="date" name="dayExpiry" id="dayExpiry">
+            <label for="codeCVC_CVV">CVC/CVV</label>
+            <input type="password" name="codeCVC_CVV" id="codeCVC_CVV">
+        </div>
+        <button type="button" id="saveInfoCard" onclick="saveCardInfo()">Save</button>
+        <table id="savedCardsTable">
+            <thead>
+                <tr>
+                    <th>Card Image</th>
+                    <th>Card Number</th>
+                    <th>Expiry Date</th>
+                    <th>CVC/CVV</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="savedCardsBody">
+                <!-- Dữ liệu sẽ được thêm vào đây -->
+            </tbody>
+        </table>
+    </form>
+    <script src="./index.js"></script>
+</body>
+</html>

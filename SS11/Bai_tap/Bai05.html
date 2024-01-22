@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <!-- 
+        Cho 1 một mảng  let  numbers=[1,5,8,7,9,6,5,41,2,6,55,4,8];
+        Sắp xếp các phần tử trong mảng theo thứ tự tăng dần.
+    -->
+
+
+    <h2>Sắp xếp số theo thứ tự</h2>
+    <input type="text" id="inputArray" placeholder="Nhập vào 1 mảng bất kì ngăn cách bằng space"> <br> <br>
+    <button onclick="sapXepTuBeDenLon()">Bé đến lớn</button> 
+    <br>
+    <br>
+    <button onclick="sapXepTuLonDenBen()">Lớn đến bé</button> 
+    <br>
+    <br>
+
+    <p id="arr"></p>
+
+
+    <script>
+        function sapXepTuBeDenLon(){
+
+            let input = document.getElementById("inputArray").value;
+            let arr = input.split(' ');
+
+            arr.sort(function (a,b) {
+                return a-b;
+            })
+
+            document.getElementById("arr").innerText = arr;
+
+
+        }
+        function sapXepTuLonDenBen(){
+            let input = document.getElementById("inputArray").value;
+            let arr = input.split(' ');
+
+            arr.sort(function (a,b) {
+                return a-b;
+            })
+            arr.reverse();
+            document.getElementById("arr").innerText = arr;
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

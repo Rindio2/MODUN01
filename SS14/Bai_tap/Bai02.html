@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Tìm số lớn nhất và duy nhất</h1>
+    <form id="numberForm">
+        <label for="numberInput">Nhập vào 5 số nguyên cách nhau bằng khoảng trắng:</label>
+        <input type="text" id="numberInput">
+        <button type="button" onclick="tinhTongSNT()">Tìm số lớn nhất và duy nhất</button>
+    </form>
+    <div id="result"></div>
+
+
+    <script>
+
+        
+        let numbers_ngTo= [];
+        let tong=0;
+
+        function isPrime(number) {
+            if (number <= 1) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        function tinhTongSNT(){
+            let inputString = document.getElementById('numberInput').value;
+            let numbers = inputString.split(' ').map(Number);
+
+            for(let i=0; i< numbers.length; i++){
+            if(isPrime(numbers[i])){
+                numbers_ngTo.push(numbers[i]);
+            }
+            }
+            
+            for(let i=0; i< numbers_ngTo.length; i++){
+                tong += numbers_ngTo[i];
+            }
+            document.getElementById('result').textContent = tong;
+        }
+        
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Viết chương trình nhập vào số tuổi của 1 người.Nếu số tuổi người đó >=18 tuổi ,
+        hiển thị thông báo trên 18 tuổi ngược lại bạn chưa đủ 18 tuổi! -->
+    
+    <h2>Nhập số tuổi của bạn:</h2>
+    <input type="text" id="tuoi" placeholder="Nhập số tuổi">
+    <button onclick="kiemTraTuoi()">Kiểm tra</button>
+    <p id="ketqua"></p>
+
+    <script>
+
+        function kiemTraTuoi() {
+            // Lấy giá trị nhập vào từ input
+            let tuoi = document.getElementById("tuoi").value;
+
+            // Chuyển đổi giá trị nhập vào thành số nguyên
+            tuoi = parseInt(tuoi);
+
+            // Kiểm tra và hiển thị kết quả
+            if (!isNaN(tuoi)) {
+                if (tuoi >= 18) {
+                    document.getElementById("ketqua").innerHTML = "Bạn đã đủ 18 tuổi.";
+                } else {
+                    document.getElementById("ketqua").innerHTML = "Bạn chưa đủ 18 tuổi!";
+                }
+            } else {
+                document.getElementById("ketqua").innerHTML = "Vui lòng nhập số nguyên.";
+            }
+        }
+        document.addEventListener("keypress", function(event) {
+            if (event.key === 'Enter') {
+                kiemTraTuoi();
+            }
+        });
+
+    </script>
+    
+
+</body>
+</html>

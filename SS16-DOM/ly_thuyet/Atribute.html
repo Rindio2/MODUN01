@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tittle{
+            background-color: red;
+        }
+        .tittle_2{
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!--  
+
+        Attribute : thuộc tính
+        - muốn tương tác với thuộc tính đầu tiên phải lấy element ra mới tương tác được
+        - thuộc tính classList trong đối tượng
+        classList là danh sách tất cả những class của element (đối tượng)
+        các phương thức dùng trong classList
+            1. add(" tên class ") thêm class vào đối tượng
+            2. remove(" tên class ") xóa tên class
+            3. toggle(như công tắc) có class thì xóa không thì thêm vào
+            4. contain : kiểm tra đối tượng có class đấy không ?
+                ==> kết quả là true || false
+                setAttribute 
+
+    -->
+
+    <div>
+        hic
+    </div>
+    <button onclick="show()">click</button>
+    <button onclick="doiAnh()">click 2</button>
+    <script>
+
+        // let elementmau = document.getElementsByTagName("div");
+        // elementmau[0].className ="tittle";
+
+        let elementmau = document.getElementsByTagName("div");
+        elementmau[0].classList.add("tittle");
+        elementmau[0].classList.remove("tittle");
+
+        function show(){
+            elementmau[0].classList.toggle("tittle_2");
+        }
+        elementmau[0].setAttribute("","ten class")
+        function doiAnh() {
+            
+        }
+
+
+    </script>
+</body>
+</html>

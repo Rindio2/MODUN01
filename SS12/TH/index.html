@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="vanban">
+<button onclick="timMau()">tim</button>
+<p id="result"></p>
+
+<script>
+    let result =-1;
+    let a = ['xanh', 'do', 'vang'];
+    let b = ['blue', 'red', 'yellow'];
+
+    function timMau() {
+        let input = document.getElementById("vanban").value;
+         
+
+        for (let i = 0; i < a.length; i++) {
+            if (input === a[i]) {
+                result = i;
+                break; 
+            }
+        }
+
+        if (result !== -1) {
+            document.getElementById("result").innerText = "Màu tương ứng là: " + b[result];
+        } else {
+            document.getElementById("result").innerText = "Không tìm thấy màu tương ứng.";
+        }
+    }
+</script>
+
+
+</body>
+</html>

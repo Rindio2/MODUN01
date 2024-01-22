@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Xóa</h1>
+    <form id="numberForm">
+        <label for="numberInput">xóa các số trong:</label>
+        <input type="text" id="numberInput">
+        <button type="button" onclick="xoaSo()">xóa số trong mảng</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function xoaSo() {
+            let inputString = document.getElementById('numberInput').value;
+            let resultString = '';
+
+            for (let i = 0; i < inputString.length; i++) {
+                if(isNaN(inputString[i])){
+                    resultString += inputString[i];
+                }
+            }
+            document.getElementById('result').textContent = resultString;
+        }
+
+        let array_1 = prompt("Nhập chuỗi chữ và số ngẫu nhiên");
+        let  array_1_split = array_1.split('').value;
+
+        let array_2 = '';
+        for (let i = 0; i < array_1_split.length; i++) {
+            if (isNaN(array_1_split[i])) {
+                array_2 += array_1_split[i]; //đoạn này kiểm tra có phải là số hay không
+            } 
+        }
+        console.log(array_2);
+
+    </script>
+
+
+</body>
+</html>

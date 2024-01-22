@@ -1,0 +1,40 @@
+*{
+    background-color: rgb(218, 217, 217);
+}
+
+input{
+    width: 40%; /* Đổi kích thước theo mong muốn */
+    height: 40px; /* Đổi kích thước theo mong muốn */
+    background-color: #ffffff; /* Đổi màu theo mong muốn */
+    margin: 5px;
+    margin-right: 50% ;/* Khoảng cách giữa các box */
+    border-radius: 5px;
+    
+}
+select{
+    width: 40.5%; /* Đổi kích thước theo mong muốn */
+    height: 40px; /* Đổi kích thước theo mong muốn */
+    background-color: #ffffff; /* Đổi màu theo mong muốn */
+    margin: 5px; /* Khoảng cách giữa các box */
+    border-radius: 5px;
+}
+button{
+    width: 98%;
+    height: 40px;
+    background-color: black;
+    color: aliceblue;
+    margin-left: 8px;
+}
+.container_swap{
+
+    display: grid; /* Sử dụng Grid */
+    grid-template-columns: auto auto; /* Hai cột tự động cùng kích thước */
+    gap: 10px; /* Khoảng cách giữa các box */
+    
+}
+
+.box {
+    width: 240% ; /* Đổi kích thước theo mong muốn */
+    height: 50%; /* Đổi kích thước theo mong muốn */
+    background-color: #ccc; /* Đổi màu theo mong muốn */
+ }

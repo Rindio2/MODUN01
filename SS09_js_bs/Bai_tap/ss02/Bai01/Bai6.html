@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Viết chương trình cho phép người dùng nhập màu vào kiểm tra.
+        Nếu nhập 1 trong các màu : xanh, đỏ,vàng thì hiển thị màu người dùng nhập
+        Nếu nhập màu khác hiển thị màu không hợp lệ!
+    -->
+
+    <h2>Nhập màu bạn muốn kiểm tra:</h2>
+    <input type="text" id="mau" placeholder="Nhập màu">
+    <button onclick="kiemTraMau()">Kiểm tra</button>
+    <button type="button" onclick="resetInput()">Reset</button> 
+    <p id="ketqua"></p>
+
+
+    <script>
+        function kiemTraMau() {
+            var mau = document.getElementById("mau").value.toLowerCase();
+
+            switch (mau) {
+                case "xanh":
+                case "đỏ":
+                case "vàng":
+                    document.getElementById("ketqua").style.color = mau;
+                    document.getElementById("ketqua").innerHTML = "Màu bạn chọn là: " + mau;
+                    break;
+                default:
+                    document.getElementById("ketqua").style.color = "black";
+                    document.getElementById("ketqua").innerHTML = "Màu không hợp lệ!";
+                    break;
+            }
+        }
+        function resetInput() {
+            document.getElementById("mau").value = ""; // Xóa nội dung trong ô input
+            document.getElementById("ketqua").innerHTML = ""; // Xóa kết quả hiển thị
+        }
+        document.addEventListener("keypress", function(event) {
+            if (event.key === 'Enter') {
+                kiemTraMau();
+            }
+        });
+    </script>
+
+
+</body>
+</html>

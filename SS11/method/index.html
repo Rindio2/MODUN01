@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!--  
+        các phương thức làm việc với mảng:
+        giúp cho code nhanh gọn, gọn gàn hơn
+        => bản chất dùng dòng for có thể sử lý hết vấn đề nhưng nó dài dòng hơn.
+            - khi học các hàm này thì nhớ
+                1. đầu vào
+                2. đầu ra (kết quả trả về của hàm)
+        1. filter (lọc)
+        - kết quả trả về là một mảng 
+            + nếu thỏa mãn điều kiện mảng chứa phần tử
+            + nếu không thỏa mãn thì mảng rỗng
+            + trả về 1 mảng mới.
+        2. map
+            + tạo ra mảng mới
+            + số lượng phần tử trong mảng bằng số luọng phần tử mảng ban đầu
+        3. forEach
+            + không tạo ra mảng mới 
+            + không nhận return
+            + tương tác trực tiếp với mảng ban đầu
+        4. find
+            + tìm kiểm phần tử thỏa mãn và trả về phần tử đó 
+            + nếu không thỏa mãn trả về undefined
+        5. findIndex
+            + trả về vị trí
+            + nếu không thỏa mãn trả về -1
+        6. some
+            + trả về true nếu có 1 phần tử thỏa mãn điều kiện
+            + không thì trả về false
+        7. every
+            + tất cả phải thỏa mãn điều kiện 
+        8. reduce (hàm dùng để tính toán)
+            + accumulator biến tích lũy
+            + ((a,b,c)=>{},0) khởi tạo cho a =0
+
+    -->
+
+
+    <script>
+
+        let number =[5,6,7,8,9,1];
+
+
+        // ************ reduce *******************
+
+
+        let result = number.reduce((accumulator, itemValue, index)=>{
+            return accumulator+itemValue
+        },0)
+        console.log(result);
+
+
+
+        // ************* findIndex ******************
+        // let std = [
+
+        //     {
+        //         name: "hoa",
+        //         id: 11
+        //     },
+        //     {
+        //         name: "hong",
+        //         id: 31
+        //     }
+        // ]
+        // let result = std.findIndex((item,index,array) => {
+        //     return item.id == 31;
+        // })
+
+        
+
+        // ************** find *******************
+
+        // let std = [
+
+        //     {
+        //         name: "hoa",
+        //         id: 11
+        //     },
+        //     {
+        //         name: "hong",
+        //         id: 31
+        //     }
+        // ]
+        // let result = std.find((item,index,array) => {
+        //     return item.id == 31;
+        // })
+
+
+        // ************** forEach ****************
+        // let result = number.forEach((item,index,array)=>{
+        //     number[item]= item*2 // trả về number
+        // })
+
+
+
+        // *************** map********************
+        // let result = number.map((item,index,array)=>{
+        //     return item>5; // trả về true và false
+        // })
+
+
+
+        //*************** filter *****************
+        // let result = [];
+
+        // for(let i=0; i< number.length; i++){
+
+        //     if(number[i]>5){
+        //         result.push(number[i])
+        //     }
+
+        // }
+
+        // let result = number.filter((item,index,array) =>{
+        //     return index >5;
+        // })  
+
+
+    </script>
+
+
+</body>
+</html>

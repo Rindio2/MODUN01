@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Xóa</h1>
+    <form id="numberForm">
+        <label for="numberInput">xóa các số trong:</label>
+        <input type="text" id="numberInput">
+        <button type="button" onclick="xoaSo()">xóa số trong mảng</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function xoaSo() {
+            let inputString = document.getElementById('numberInput').value;
+            let arr = inputString.split(' ');
+            let resultString = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                let reversedWord = arr[i].split('').reverse().join(''); // Reverse each word
+                resultString.push(reversedWord); // Add reversed word to result array
+            }
+
+            document.getElementById('result').textContent = resultString.join(' ');
+        }
+    </script>
+
+
+</body>
+</html>

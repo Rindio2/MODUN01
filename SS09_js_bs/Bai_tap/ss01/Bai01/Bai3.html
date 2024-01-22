@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Diện tích và chu vi hình vuông</h2>
+    <label for="inputA">Nhập chiều dài (a):</label>
+    <input type="number" id="inputA">
+    <br>
+    <br>
+    <label for="inputB">Nhập chiều rộng (b):</label>
+    <input type="number" id="inputB">
+    <br>
+    <br>
+    <button onclick="tinhChuViVaDienTichHinhVuong()">Tính hình vuông</button>
+    <br>
+    <br>
+    <div id="result"></div>
+    <h2>Diện tích và chu vi hình tròn</h2>
+    <label for="inputA">Nhập vào bán kính (R):</label>
+    <input type="number" id="inputR">
+    <br>
+    <br>
+    <button onclick="tinhChuViVaDienTichHinhTron()">Tính hình tròn</button>
+    <br>
+    <br>
+    <div id="result_2"></div>
+    
+
+
+    <script>
+        const pi = 3.14;
+        function tinhChuViVaDienTichHinhVuong(){
+            // Lấy giá trị từ ô input
+            const chieuDai_hVuong = parseFloat(document.getElementById('inputA').value);
+            const chieuRong_hVuong = parseFloat(document.getElementById('inputB').value);
+        
+            // Kiểm tra nếu dữ liệu nhập vào là số hợp lệ
+            if (!isNaN(chieuDai_hVuong) && !isNaN(chieuRong_hVuong)) {
+                // Tính chu vi và diện tích
+                const chuVi_hVuong = (chieuDai_hVuong + chieuRong_hVuong) * 2;
+                const dienTich_hVuong = chieuDai_hVuong * chieuRong_hVuong;
+        
+                // Hiển thị kết quả trên màn hình
+                const resultElement = document.getElementById('result');
+                resultElement.innerHTML = `Chu vi hình chữ nhật là: ${chuVi_hVuong}<br>Diện tích hình chữ nhật là: ${dienTich_hVuong}`;
+            } else {
+                // Thông báo nếu dữ liệu nhập vào không hợp lệ
+                alert("Vui lòng nhập vào số hợp lệ cho chiều dài và chiều rộng!");
+            }
+        }
+        function tinhChuViVaDienTichHinhTron(){
+            // Lấy giá trị từ ô input
+            const banKinh_hTron = parseFloat(document.getElementById('inputR').value);
+            
+            // Kiểm tra kiểu dữ liệu
+            if(!isNaN(banKinh_hTron)){
+
+                const chuVi_hTron = 2*pi*banKinh_hTron;
+                const dienTich_hTron =  pi*banKinh_hTron*banKinh_hTron;
+
+
+                const resultElement_hTron = document.getElementById('result_2')
+                resultElement_hTron.innerHTML = `Chu vi hình tròn là: ${chuVi_hTron} <br> Diện tích hình trong là ${dienTich_hTron}`
+            }
+
+            else {
+                // Thông báo nếu dữ liệu nhập vào không hợp lệ
+                alert("Vui lòng nhập vào số hợp lệ cho chiều dài và chiều rộng!");
+            }
+
+
+        }
+      </script>
+
+</body>
+</html>

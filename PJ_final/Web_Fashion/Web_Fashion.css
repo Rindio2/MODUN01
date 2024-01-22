@@ -1,0 +1,74 @@
+*{
+    padding: 0%;
+    margin: 0;
+   
+}
+
+li{
+    
+    margin-left: 20px;
+    margin-right: 20px;
+    list-style: none;
+    display: inline;
+}
+
+li:hover{
+    color: rgb(104, 45, 0);
+    cursor: pointer;
+}
+
+
+/* HEADER */
+
+
+.Web_fashionrikkei{
+    position: relative ;
+    
+}
+
+.HeaderWeb{
+    position:fixed;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(233, 119, 20);
+    color: aliceblue;
+}
+
+
+.Top_header{
+    margin-top: 5px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    color: aliceblue;
+    
+}
+
+.Headerline{
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    height: 0.5px;
+    background-color: rgb(200, 200, 200);
+}
+
+.Header_main{
+    margin-top: 40px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    h2{
+        margin-top: -50px;
+        font-family: 'Times New Roman', Times, serif;
+        margin-left: 200px;
+    }
+    img{
+        margin-left: -100px;
+        margin-top: -30px;
+        width: 160px;
+        height: 60px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+    }
+
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Market Research Survey</h1>
+    <p>Please take a few moments to complete this satisfaction survey</p>
+    <form action="">
+    <label for="CL">What is your age range?</label><br>
+        <select id="CL" name="CL">
+            <option value="mau">1-7</option>
+            <option value="mau">8-17</option>
+            <option value="mau">18-24</option>
+        </select><br><br/>
+        <label for="TN">What is your yearly income range?</label><br>
+        <select id="TN" name="TN">
+            <option value="TN">0-200$</option>
+            <option value="TN">200$-500$</option>
+            <option value="TN">500$-1000$</option>
+            <option value="TN">other</option>
+        </select><br><br/>
+        <label for="gender">Giới tính:</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Nam</label><br>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Nữ</label><br>
+        <input type="radio" id="Nonbinary" name="gender" value="Nonbinary" required>
+        <label for="Nonbinary">Nonbinary</label><br>
+        <input type="radio" id="Other" name="gender" value="Other" required>
+        <label for="Other">Other</label><br>
+        <input type="text" name="Other" id="Other"><br><br>
+
+        <label for="Sp">Which of the following products have your purchased in the last 2 months. Please check all that apply:</label><br>
+        <input type="radio" id="Product 1" name="Sp" value="Product 1" required>
+        <label for="Product 1">Product 1</label><br>
+        <input type="radio" id="Product 2" name="Sp" value="Product 2" required>
+        <label for="Product 2">Product 2</label><br>
+        <input type="radio" id="Product 3" name="Sp" value="Product 3" required>
+        <label for="Product 3">Product 3</label><br>
+
+        <label for="Day">How often would you use our new product?</label><br>
+        <input type="radio" id="Daily" name="Day" value="Daily" required>
+        <label for="Daily">Daily</label><br>
+        <input type="radio" id="Weekly" name="Day" value="Weekly" required>
+        <label for="Weekly">Weekly</label><br>
+        <input type="radio" id="Monthly" name="Day" value="Monthly" required>
+        <label for="Monthly">Product 3</label><br>
+
+        <label for="tien">What would you pay for the new product?</label> <br>
+        <label>$</label><input type="text" id="tien" value="Dolla" > <label>+</label> <input type="text" name="tien" value="Sent"> <br>
+
+        <label for="texbox">What features would you like to see in the new product.</label> <br>
+        <input type="text" name="" id="texbox" style="height: 120px; width: 400px;"><br>
+        <p>Plase rate your level of agreement with the following statements.</p>
+        <table border="1">
+            <tr>
+                <th></th>
+                <th>Strongly Disagree</th>
+                <th>Disagree</th>
+                <th>Agree</th>
+                <th>Strongly Agree</th>
+            </tr>
+            <tr>
+                <td>Our products are priced fairly.</td>
+                <td><input type="radio" id="DHL1" name="DHL1" value="DHL1" required></td>
+                <td><input type="radio" id="DHL1" name="DHL1" value="DHL1" required></td>
+                <td><input type="radio" id="DHL1" name="DHL1" value="DHL1" required></td>
+                <td><input type="radio" id="DHL1" name="DHL1" value="DHL1" required></td>
+            </tr>
+            <tr>
+                <td>Our products are hight quality.</td>
+                <td><input type="radio" id="DHL2" name="DHL2" value="DHL2" required></td>
+                <td><input type="radio" id="DHL2" name="DHL2" value="DHL2" required></td>
+                <td><input type="radio" id="DHL2" name="DHL2" value="DHL2" required></td>
+                <td><input type="radio" id="DHL2" name="DHL2" value="DHL2" required></td>
+            </tr>
+            <tr>
+                <td>You would recomment our product to a friend or coworker.</td>
+                <td><input type="radio" id="DHL3" name="DHL3" value="DHL3" required></td>
+                <td><input type="radio" id="DHL3" name="DHL3" value="DHL3" required></td>
+                <td><input type="radio" id="DHL3" name="DHL3" value="DHL3" required></td>
+                <td><input type="radio" id="DHL3" name="DHL3" value="DHL3" required></td>
+            </tr>
+        </table>
+    </form> <br>
+    <button>Submit</button>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tìm số lớn nhất và duy nhất</h1>
+  <form id="numberForm">
+    <label for="numberInput">Nhập vào 5 số nguyên cách nhau bằng khoảng trắng:</label>
+    <input type="text" id="numberInput">
+    <button type="button" onclick="timSoLonDuyNhat()">Tìm số lớn nhất và duy nhất</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    // function findMaxUnique() {
+    //   let inputString = document.getElementById('numberInput').value;
+    //   let numbers = inputString.split(' ').map(Number);
+
+    //   if (numbers.length !== 5 || numbers.some(isNaN)) {
+    //     document.getElementById('result').textContent = 'Vui lòng nhập đúng định dạng 5 số nguyên.';
+    //   } else {
+    //     let uniqueNumbers = [...new Set(numbers)];
+    //     uniqueNumbers.sort((a, b) => b - a);
+
+    //     let maxUnique = null;
+    //     for (let i = 0; i < uniqueNumbers.length; i++) {
+    //         if (numbers.filter(num => num === uniqueNumbers[i]).length === 1) {
+    //             maxUnique = uniqueNumbers[i];
+    //             break;
+    //         }
+    //     }
+
+    //     if (maxUnique !== null) {
+    //         document.getElementById('result').textContent = `Số lớn nhất và duy nhất là: ${maxUnique}`;
+    //     } else {
+    //         document.getElementById('result').textContent = 'Không có số lớn nhất và duy nhất.';
+    //     }
+    //   }
+    // }
+
+        let timSoLonDuyNhat= ()=> {
+
+
+            let inputString = document.getElementById('numberInput').value;
+            let numbers = inputString.split(' ').map(Number);
+
+            
+            let uniqueNumbers = [...new Set(numbers)];
+
+
+            for (let i = 0; i < uniqueNumbers.length; i++) {
+                let count = 0;
+                for (let j = 0; j < numbers.length; j++) {
+                    if (uniqueNumbers[i] === numbers[j]) {
+                        count++;
+                    }
+                }
+                if (count > 1) {
+                    // Xóa phần tử khỏi mảng uniqueNumbers
+                    uniqueNumbers.splice(i, 1);
+                    
+                    
+                }
+               
+            }
+            let maxNumber = Math.max(...uniqueNumbers);
+            
+            document.getElementById('result').textContent = maxNumber;
+        }
+
+            
+            
+
+
+
+  </script>
+</body>
+</html>

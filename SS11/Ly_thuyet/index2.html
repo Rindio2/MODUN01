@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        Các phương pháp làm việc với chuỗi (text);
+        1. split(): chuỗi thành mảng 
+        2. join(): gọp các phần tử trong mảng thành chuỗi
+        Các phương thức làm việc với mảng
+        1. reverse(): đảo ngược các phần tử trong mảng
+        2. sort(): sắp xếp các phần tử theo mã ASSCI
+        3. indexof : kiểm tra phần tử có trong mảng hay không
+            - nếu có thì trả về vị trí
+            - nếu không thì trả về -1
+        4. include : kiểm tra phần tử có trong mảng hay không 
+            - nếu có thì trả về true
+            - nếu không thì trả về false
+        5. slice : sao chép ra 1 cái mảng mới không liên quan đến mảng ban đầu
+
+    -->
+    
+
+
+    <script>
+
+
+        // let text = "HELLO TUI NE";
+        // let result = text.split(" "); // "" : truyền vào phần tử cut
+        // let a = result.join("");
+        
+        let std =["hoa","hong","mai","linh"];
+        let newstd = std.slice(1,4);
+        // std.reverse();
+        // console.log(std);
+        // kiểm tra mảng có "hoa" hay không
+        let check = std.indexOf("hoa");
+        console.log(newstd);
+        // include in chan dị á
+
+
+    </script>
+
+</body>
+</html>

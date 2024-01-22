@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Viết hàm kiểm tra xem số người dùng nhập vào có phải là số nguyên tố hay không? -->
+
+    <h2>Nhập số</h2>
+    <input type="number" id="inputNumber">
+    <button onclick="kiemTraSoNguyenTo()">Kiểm tra số nguyên tố</button>
+    <p id="result"></p>
+
+    <script>
+        let kiemTraSoNguyenTo = () => {
+            let num = parseInt(document.getElementById("inputNumber").value);
+
+            if (isPrime(num)) {
+                document.getElementById("result").innerText = num + " là số nguyên tố";
+            } else {
+                document.getElementById("result").innerText = num + " không phải là số nguyên tố";
+            }
+        }
+
+        // kiểm tra số nguyên tố
+        function isPrime(number) {
+            if (number <= 1) {
+                return false;
+            }
+
+            
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

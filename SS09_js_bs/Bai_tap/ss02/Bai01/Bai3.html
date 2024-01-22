@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Viết chương trình cho phép người dùng nhập vào số giờ trong ngày.
+        Nếu trước 10h thì hiển thị : “Good morning”.
+        Nếu thời gian chưa tới 20h thì hiển thị : “Good day”.
+        -Nếu sau 20h hiển thị : “Good evening”.
+    -->
+
+    <h2>Bây giờ là mấy giờ:</h2>
+    <input type="text" id="time1" placeholder="Nhập vào thời gian lúc này">
+    <button onclick="kiemTraThoiGian()">Kiểm tra</button>
+    <button type="button" onclick="resetInput()">Reset</button>
+    <p id="ketqua"></p>
+
+
+    <script>
+
+        
+
+        function kiemTraThoiGian(){
+
+            let time1 = document.getElementById("time1").value;
+
+            
+            time1 = parseInt(time1);
+
+            if(!isNaN(time1)){
+
+                if(time1 < 10){
+                    document.getElementById("ketqua").innerHTML = "Good morning";
+                }
+               
+                else if( time1 >= 10 && time1 < 20 ){
+                    document.getElementById("ketqua").innerHTML = "Good day";
+                }
+                else{
+                    document.getElementById("ketqua").innerHTML = "Good everning";
+                }
+
+            }
+            else {
+                document.getElementById("ketqua").innerHTML = "Vui lòng nhập thời gian.";
+            
+            }
+        }
+        function resetInput() {
+            document.getElementById("time1").value = ""; // Xóa nội dung trong ô input
+            document.getElementById("ketqua").innerHTML = ""; // Xóa kết quả hiển thị
+        }
+        document.addEventListener("keypress", function(event) {
+            if (event.key === 'Enter') {
+                kiemTraThoiGian();
+            }
+        });
+
+    </script>
+
+
+</body>
+</html>

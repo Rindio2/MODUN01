@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  
+
+
+        Text (nội dung trong dom)
+        sau khi lấy element ra thì
+            1. innerHTML
+            2. innerText
+            3. textContent
+
+
+
+    -->
+
+    <h1>DOM</h1>
+
+    <div class="test">
+        <p>xin chao</p>
+        <span style="display: none;"> tam biet</span>
+
+
+    </div>
+
+    <button onclick="chageText()"> đổi</button>
+    <button onclick="chageText_2()"> đổi2</button>
+    <script>
+        // chuyển từ DOM => tui đau đớn tui gục ngã
+        function chageText() {
+            let ele =document.getElementsByTagName("h1")[0];
+            ele.textContent = "tui đau đớn tui gục ngã";
+        }
+        function chageText_2(){
+            let lelm =document.getElementsByClassName("test")[0];
+            console.log(lelm.innerHTML);
+            console.log(lelm.innerText);
+            console.log(lelm.textContent);
+        }
+    </script>
+
+
+
+</body>
+</html>

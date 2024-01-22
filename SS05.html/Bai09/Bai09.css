@@ -1,0 +1,37 @@
+*{
+   font-family: 'Courier New', Courier, monospace;
+}
+
+.container_swap{
+
+    width: 100%;
+        
+}
+        
+.div_left{
+        
+    width: 30%;
+        
+    float: left;
+        
+    text-align: left;
+    
+        
+}
+        
+.div_right{
+        
+    width: 60%;
+        
+    float: left;
+        
+    text-align: left;
+
+    margin-left: 20px;
+     
+}
+.box1{
+    border: 2px solid #d5d5d5;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

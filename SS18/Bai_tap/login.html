@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <p>User</p>
+    <input type="text" placeholder="Tài khoản" id="login_user">
+    <p>Password</p>
+    <input type="text" placeholder="Mật khẩu" id="login_password"> <br> <br>
+    <button onclick="login()">Đăng nhập</button>
+
+    <script>
+        function login() {
+            let username = document.getElementById('login_user').value;
+            let password = document.getElementById('login_password').value;
+
+            // Lấy thông tin người dùng đã đăng ký từ local storage
+            let storedUser = localStorage.getItem('registeredUser');
+            if (!storedUser) {
+                alert("Tài khoản không tồn tại. Vui lòng đăng ký trước.");
+                return;
+            }
+
+            // Chuyển đổi chuỗi JSON từ local storage thành đối tượng JavaScript
+            let storedUserObj = JSON.parse(storedUser);
+
+            // Kiểm tra xem thông tin đăng nhập có khớp với thông tin đã đăng ký không
+            if (username === storedUserObj.username && password === storedUserObj.password) {
+                alert("Đăng nhập thành công!");
+                // Redirect hoặc thực hiện các hành động sau khi đăng nhập thành công
+            } else {
+                alert("Sai tài khoản hoặc mật khẩu. Vui lòng thử lại.");
+            }
+        }
+        
+        //
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Card</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- font awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>Select Card</h1>
+    </div>
+
+    <form action="#">
+      <input type="radio" name="payment" id="mastercard">
+      <input type="radio" name="payment" id="paypal">
+      <input type="radio" name="payment" id="visa">
+      <input type="radio" name="payment" id="amex">
+      <input type="radio" name="payment" id="discover">
+
+
+
+      <div class="category">
+        <label for="mastercard" class="mastercardMethod">
+        <div class="imgName">
+        <div class="imgContainer">
+          <img src="/img/Mastercard-logo.svg.png" alt="">
+        </div>
+        <span class="name">Mastercard</span>
+      </div>
+      <span class="check"><i class="fa-solid fa-circle-check"></i></span>
+       </label>
+        <label for="paypal" class="paypalMethod">
+          <div class="imgName">
+            <div class="imgContainer">
+              <img src="/img/PayPal_2023_Logo.jpg" alt="">
+            </div>
+            <span class="name">Paypal</span>
+          </div>
+          <span class="check"><i class="fa-solid fa-circle-check"></i></span>
+        </label>
+        <label for="visa" class="visaMethod">
+          <div class="imgName">
+            <div class="imgContainer">
+              <img src="/img/slrajeufasehglj7b3ur.webp" alt="">
+            </div>
+            <span class="name">Visa</span>
+          </div>
+          <span class="check"><i class="fa-solid fa-circle-check"></i></span>
+        </label>
+        <label for="amex" class="amexMethod">
+          <div class="imgName">
+            <div class="imgContainer">
+              <img src="/img/American-Express-Color.png" alt="">
+            </div>
+            <span class="name">American Express</span>
+          </div>
+          <span class="check"><i class="fa-solid fa-circle-check"></i></span>
+        </label>
+        <label for="discover" class="discoverMethod">
+          <div class="imgName">
+            <div class="imgContainer">
+              <img src="/img/Discover-logo.png" alt="">
+            </div>
+            <span class="name">Discover</span>
+          </div>
+          <span class="check"><i class="fa-solid fa-circle-check"></i></span>
+        </label>
+      </div>
+    </form>
+    </div>
+
+
+    <div class="container2">
+      <div class="information">
+        <label for="cardNumber">Card Number</label><br>
+        <input type="text" id="cardNumber" requird><br>
+        <label for="expiryDate">Expiry Date</label><br>
+        <input type="month" name="daytime" id="expiryDate"><br>
+        <label for="cvc">CVC/CVV</label><br>
+        <input type="number" pattern="\d{3}" maxlength="3" id="cvc"/>
+          <br><br>
+        <button onclick="save()" id="save">Save</button>
+      </div>
+
+      <br>
+      <div>
+        <table border="1" id="crudTable">
+        <thead>
+          <tr>
+            <th>Card Img</th>
+            <th>Card Number</th>
+            <th>Expiry Date</th>
+            <th>CVV</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody >
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

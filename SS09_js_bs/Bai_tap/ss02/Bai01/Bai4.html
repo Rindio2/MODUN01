@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Viết chương trình cho phép người dùng nhập vào 1 số.
+        Kiểm tra xem số nhập vào là số chẵn hay số lẻ (sử dụng câu điều kiện if-else).
+    -->
+
+
+    <h2>Nhập vào 1 số bất kì:</h2>
+    <input type="text" id="numBer" placeholder="Nhập vào 1 số bất kì">
+    <button onclick="kiemTraChanle()">Kiểm tra</button>
+    <button type="button" onclick="resetInput()">Reset</button>
+    <p id="ketqua"></p>
+
+
+    <script>
+
+        function kiemTraChanle(){
+
+            let numBer = document.getElementById("numBer").value;
+
+            numBer = parseInt(numBer);
+
+            if(!isNaN(numBer)){
+
+                if( numBer%2 == 0){
+                    document.getElementById("ketqua").innerHTML = " là số chẵn ";
+                }
+                else{
+                    document.getElementById("ketqua").innerHTML = " là số lẻ ";
+                }
+
+            }
+            else{
+                document.getElementById("ketqua").innerHTML = "Vui lòng nhập số nguyên";
+            }
+
+
+        }
+        function resetInput() {
+            document.getElementById("numBer").value = ""; // Xóa nội dung trong ô input
+            document.getElementById("ketqua").innerHTML = ""; // Xóa kết quả hiển thị
+        }
+        document.addEventListener("keypress", function(event) {
+            if (event.key === 'Enter') {
+                kiemTraChanle();
+            }
+        });
+
+
+    </script>
+
+</body>
+</html>

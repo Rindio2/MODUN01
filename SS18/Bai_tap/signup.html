@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Sign UP</h1>
+    <!-- Thực hiện đăng ký tài khoản và lưu vào local storage -->
+    <p>User</p>
+    <input type="text" placeholder="Tài khoản" id="user"> <br>
+    <p>Password</p>
+    <input type="password" placeholder="Mật khẩu" id="password"> <br>
+    <p>Confirm password</p>
+    <input type="password" placeholder="Nhập lại mật khẩu" id="password_check"> <br>
+    <p>Email</p>
+    <input type="text" placeholder="Email người dùng" id="email"> <br> <br>
+    <button onclick="sign_up()">Đăng kí</button>
+
+    <script>
+        function sign_up() {
+            // Lấy giá trị từ các trường input
+            let username = document.getElementById('user').value;
+            let password = document.getElementById('password').value;
+            let passwordCheck = document.getElementById('password_check').value;
+            let email = document.getElementById('email').value;
+
+            // Kiểm tra xem mật khẩu và nhập lại mật khẩu có trùng khớp không
+            if (password !== passwordCheck) {
+                alert("Mật khẩu không trùng khớp. Vui lòng nhập lại.");
+                return;
+            }
+
+            // Kiểm tra xem email đã tồn tại trong local storage chưa
+            let registeredUsers = localStorage.getItem('registeredUsers');
+            if (!registeredUsers) {
+                registeredUsers = [];
+            } else {
+                registeredUsers = JSON.parse(registeredUsers);
+            }
+
+            // Kiểm tra xem email đã được sử dụng chưa
+            for (let user of registeredUsers) {
+                if (user.email === email) {
+                    alert("Email đã được sử dụng. Vui lòng sử dụng email khác.");
+                    return;
+                }
+            }
+
+            // Kiểm tra xem user đã tồn tại chưa
+            for (let user of registeredUsers) {
+                if (user.username === username) {
+                    alert("User đã được sử dụng. Vui lòng sử dụng User khác.");
+                    return;
+                }
+            }
+
+            // Tạo một đối tượng chứa thông tin đăng ký
+            let userObject = {
+                username: username,
+                password: password,
+                email: email
+            };
+
+            // Thêm người dùng mới vào mảng
+            registeredUsers.push(userObject);
+
+            // Lưu mảng vào local storage
+            localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+
+            // Hiển thị thông báo đăng ký thành công
+            alert("Đăng ký thành công!");
+            window.location.href="./login.html"
+        }
+        
+        
+    </script>
+
+</body>
+</html>

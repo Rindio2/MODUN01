@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!--  
+
+
+    -->
+
+    <input type="text" placeholder="Tên sản phẩm:" id="inputArray_SP">
+    <button onclick="addToCart()">Mua</button>
+    <p id="result"></p>
+
+
+    <script>
+
+        let store = [["pc", 5000], ["banhmi", 2000], ["ao", 3000]];
+        let cart = {};
+        let cart_price = {};
+
+        let addToCart = () => {
+            let inputArray_SP = document.getElementById("inputArray_SP").value;
+            
+            switch (inputArray_SP) {
+                case "pc":
+                case "banhmi":
+                case "ao":
+                    
+                    for (let i = 0; i < store.length; i++) {
+                        const item = store[i][0]; // Get the item name
+                        const price = store[i][1]; // Get the item price
+
+                        if (inputArray_SP === item) {
+                            cart[item] = (cart[item] || 0) + 1;
+                            cart_price[item] = price; // Store the price for the item
+                            break; // Exit the loop if item is found
+                        }
+                    }
+
+                    let result = '';
+                    for (const item in cart) {
+                        result += `Tên sản phẩm: ${item}, Giá: ${cart_price[item]} , Số lượng: ${cart[item]} <br>`;
+                    }
+
+                    document.getElementById('result').innerHTML = result;
+
+                    break;
+            
+                default:
+                    document.getElementById('result').innerHTML = "Không có sản phẩm trong cửa hàng"
+                    break;
+            }
+            
+        };
+        
+
+
+        
+
+    </script>
+
+</body>
+</html>
